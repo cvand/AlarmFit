@@ -23,23 +23,16 @@
 }
 
 -(void)updateTime {
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"%H:%m"];
-//    NSDate *date = [dateFormatter dateFromString:[[NSDate date] description]];
-//    
-//    NSCalendar *calendar = [NSCalendar currentCalendar];
-//    
-//    NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:date];
-//    NSInteger hour = [components hour];
-//    NSInteger minute = [components minute];
-//    
-//    NSString *hourString = @(hour).stringValue;
-//    NSString *minuteString = @(minute).stringValue;
-//    
+    NSDate *now = [[NSDate alloc] init];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSString *currentTime = [dateFormatter stringFromDate:now];
+    
 //    NSString *time = [hourString stringByAppendingString:@" : "];
 //    time = [time stringByAppendingString:minuteString];
-//    
-//    [_timeView setText:time];
+    
+    [_timeView setText:currentTime];
 }
 
 - (void)didReceiveMemoryWarning {
