@@ -17,22 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateTime];
-    
-    NSTimer* timer = [NSTimer timerWithTimeInterval:60.0f target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 -(void)updateTime {
-    NSDate *now = [[NSDate alloc] init];
-    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-    NSString *currentTime = [dateFormatter stringFromDate:now];
-    
-//    NSString *time = [hourString stringByAppendingString:@" : "];
-//    time = [time stringByAppendingString:minuteString];
-    
-    [_timeView setText:currentTime];
+    [dateFormatter setDateFormat:@"hh:mm"];
+    _timeView.text = [dateFormatter stringFromDate:[NSDate date]];
+    [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
 }
 
 - (void)didReceiveMemoryWarning {
