@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9B72221A95C0E800542332 /* NewAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72211A95C0E800542332 /* NewAlarmViewController.m */; };
+		2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */; };
+		2F9B72281A95CEB500542332 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72271A95CEB500542332 /* Alarm.m */; };
 		5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1378451A95841700CA01BF /* Default-568h@2x.png */; };
 		5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2331A95687A0077D491 /* Base64Transcoder.c */; };
 		5A85E23A1A95687A0077D491 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2351A95687A0077D491 /* hmac.c */; };
@@ -40,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F9B72201A95C0E800542332 /* NewAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlarmViewController.h; sourceTree = "<group>"; };
+		2F9B72211A95C0E800542332 /* NewAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlarmViewController.m; sourceTree = "<group>"; };
+		2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAlarmTableViewController.h; sourceTree = "<group>"; };
+		2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetAlarmTableViewController.m; sourceTree = "<group>"; };
+		2F9B72261A95CEB500542332 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
+		2F9B72271A95CEB500542332 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		5A1378451A95841700CA01BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5A85E2331A95687A0077D491 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Base64Transcoder.c; path = Crypto/Base64Transcoder.c; sourceTree = "<group>"; };
 		5A85E2341A95687A0077D491 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64Transcoder.h; path = Crypto/Base64Transcoder.h; sourceTree = "<group>"; };
@@ -163,6 +172,12 @@
 				5AFFA7B91A8E9BA200B5B429 /* SecondViewController.h */,
 				5AFFA7BA1A8E9BA200B5B429 /* SecondViewController.m */,
 				5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */,
+				2F9B72261A95CEB500542332 /* Alarm.h */,
+				2F9B72271A95CEB500542332 /* Alarm.m */,
+				2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */,
+				2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */,
+				2F9B72201A95C0E800542332 /* NewAlarmViewController.h */,
+				2F9B72211A95C0E800542332 /* NewAlarmViewController.m */,
 				5A85E2301A95684F0077D491 /* OAuth-1 */,
 				5A85E24A1A9568FD0077D491 /* Supporting Files */,
 				5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */,
@@ -303,13 +318,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */,
 				5A85E2461A9568BB0077D491 /* NSString+URLEncoding.m in Sources */,
 				5A85E23A1A95687A0077D491 /* hmac.c in Sources */,
 				5A85E2451A9568BB0077D491 /* LoginWebViewController.m in Sources */,
 				5AFFA7BB1A8E9BA200B5B429 /* SecondViewController.m in Sources */,
 				5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */,
 				5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */,
+				2F9B72221A95C0E800542332 /* NewAlarmViewController.m in Sources */,
 				5A85E23B1A95687A0077D491 /* sha1.c in Sources */,
+				2F9B72281A95CEB500542332 /* Alarm.m in Sources */,
 				5A85E2471A9568BB0077D491 /* OAuth1Controller.m in Sources */,
 				5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */,
 				5AFFA7B21A8E9BA200B5B429 /* main.m in Sources */,
