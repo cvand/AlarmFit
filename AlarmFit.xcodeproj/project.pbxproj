@@ -7,11 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1378451A95841700CA01BF /* Default-568h@2x.png */; };
+		5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2331A95687A0077D491 /* Base64Transcoder.c */; };
+		5A85E23A1A95687A0077D491 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2351A95687A0077D491 /* hmac.c */; };
+		5A85E23B1A95687A0077D491 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2371A95687A0077D491 /* sha1.c */; };
+		5A85E2451A9568BB0077D491 /* LoginWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E23D1A9568BB0077D491 /* LoginWebViewController.m */; };
+		5A85E2461A9568BB0077D491 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E23F1A9568BB0077D491 /* NSString+URLEncoding.m */; };
+		5A85E2471A9568BB0077D491 /* OAuth1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2411A9568BB0077D491 /* OAuth1Controller.m */; };
+		5A85E2481A9568BB0077D491 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A85E2421A9568BB0077D491 /* Info.plist */; };
+		5A85E2491A9568BB0077D491 /* AlarmFit.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */; };
+		5A85E24C1A9574630077D491 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24B1A9574630077D491 /* UIKit.framework */; };
+		5A85E24E1A95746E0077D491 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24D1A95746E0077D491 /* Foundation.framework */; };
+		5A85E2501A9574760077D491 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24F1A9574760077D491 /* CoreGraphics.framework */; };
 		5AFFA7B21A8E9BA200B5B429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7B11A8E9BA200B5B429 /* main.m */; };
 		5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */; };
 		5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7B71A8E9BA200B5B429 /* FirstViewController.m */; };
 		5AFFA7BB1A8E9BA200B5B429 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BA1A8E9BA200B5B429 /* SecondViewController.m */; };
-		5AFFA7BE1A8E9BA200B5B429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BC1A8E9BA200B5B429 /* Main.storyboard */; };
+		5AFFA7BE1A8E9BA200B5B429 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */; };
 		5AFFA7C01A8E9BA200B5B429 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */; };
 		5AFFA7C31A8E9BA200B5B429 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7C11A8E9BA200B5B429 /* LaunchScreen.xib */; };
 		5AFFA7CF1A8E9BA200B5B429 /* AlarmFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7CE1A8E9BA200B5B429 /* AlarmFitTests.m */; };
@@ -28,8 +40,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A1378451A95841700CA01BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5A85E2331A95687A0077D491 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Base64Transcoder.c; path = Crypto/Base64Transcoder.c; sourceTree = "<group>"; };
+		5A85E2341A95687A0077D491 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64Transcoder.h; path = Crypto/Base64Transcoder.h; sourceTree = "<group>"; };
+		5A85E2351A95687A0077D491 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = Crypto/hmac.c; sourceTree = "<group>"; };
+		5A85E2361A95687A0077D491 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = Crypto/hmac.h; sourceTree = "<group>"; };
+		5A85E2371A95687A0077D491 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = Crypto/sha1.c; sourceTree = "<group>"; };
+		5A85E2381A95687A0077D491 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = Crypto/sha1.h; sourceTree = "<group>"; };
+		5A85E23C1A9568BB0077D491 /* LoginWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWebViewController.h; sourceTree = "<group>"; };
+		5A85E23D1A9568BB0077D491 /* LoginWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWebViewController.m; sourceTree = "<group>"; };
+		5A85E23E1A9568BB0077D491 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		5A85E23F1A9568BB0077D491 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		5A85E2401A9568BB0077D491 /* OAuth1Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth1Controller.h; sourceTree = "<group>"; };
+		5A85E2411A9568BB0077D491 /* OAuth1Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth1Controller.m; sourceTree = "<group>"; };
+		5A85E2421A9568BB0077D491 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A85E2431A9568BB0077D491 /* AlarmFit.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmFit.pch; sourceTree = "<group>"; };
+		5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = AlarmFit.entitlements; sourceTree = "<group>"; };
+		5A85E24B1A9574630077D491 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5A85E24D1A95746E0077D491 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5A85E24F1A9574760077D491 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5AFFA7AC1A8E9BA200B5B429 /* AlarmFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5AFFA7B01A8E9BA200B5B429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AFFA7B11A8E9BA200B5B429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,7 +67,7 @@
 		5AFFA7B71A8E9BA200B5B429 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		5AFFA7B91A8E9BA200B5B429 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		5AFFA7BA1A8E9BA200B5B429 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		5AFFA7BD1A8E9BA200B5B429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AFFA7BD1A8E9BA200B5B429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5AFFA7C21A8E9BA200B5B429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5AFFA7C81A8E9BA200B5B429 /* AlarmFitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlarmFitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A85E2501A9574760077D491 /* CoreGraphics.framework in Frameworks */,
+				5A85E24E1A95746E0077D491 /* Foundation.framework in Frameworks */,
+				5A85E24C1A9574630077D491 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +96,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A85E2301A95684F0077D491 /* OAuth-1 */ = {
+			isa = PBXGroup;
+			children = (
+				5A85E2321A9568630077D491 /* Crypto */,
+				5A85E23E1A9568BB0077D491 /* NSString+URLEncoding.h */,
+				5A85E23F1A9568BB0077D491 /* NSString+URLEncoding.m */,
+				5A85E2401A9568BB0077D491 /* OAuth1Controller.h */,
+				5A85E2411A9568BB0077D491 /* OAuth1Controller.m */,
+			);
+			name = "OAuth-1";
+			sourceTree = "<group>";
+		};
+		5A85E2321A9568630077D491 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				5A85E2331A95687A0077D491 /* Base64Transcoder.c */,
+				5A85E2341A95687A0077D491 /* Base64Transcoder.h */,
+				5A85E2351A95687A0077D491 /* hmac.c */,
+				5A85E2361A95687A0077D491 /* hmac.h */,
+				5A85E2371A95687A0077D491 /* sha1.c */,
+				5A85E2381A95687A0077D491 /* sha1.h */,
+			);
+			name = Crypto;
+			sourceTree = "<group>";
+		};
+		5A85E24A1A9568FD0077D491 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		5AFFA7A31A8E9BA200B5B429 = {
 			isa = PBXGroup;
 			children = (
+				5A1378451A95841700CA01BF /* Default-568h@2x.png */,
+				5A85E24F1A9574760077D491 /* CoreGraphics.framework */,
+				5A85E24D1A95746E0077D491 /* Foundation.framework */,
+				5A85E24B1A9574630077D491 /* UIKit.framework */,
 				5AFFA7AE1A8E9BA200B5B429 /* AlarmFit */,
 				5AFFA7CB1A8E9BA200B5B429 /* AlarmFitTests */,
 				5AFFA7AD1A8E9BA200B5B429 /* Products */,
@@ -84,13 +153,18 @@
 		5AFFA7AE1A8E9BA200B5B429 /* AlarmFit */ = {
 			isa = PBXGroup;
 			children = (
+				5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */,
+				5A85E23C1A9568BB0077D491 /* LoginWebViewController.h */,
+				5A85E23D1A9568BB0077D491 /* LoginWebViewController.m */,
 				5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */,
 				5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */,
 				5AFFA7B61A8E9BA200B5B429 /* FirstViewController.h */,
 				5AFFA7B71A8E9BA200B5B429 /* FirstViewController.m */,
 				5AFFA7B91A8E9BA200B5B429 /* SecondViewController.h */,
 				5AFFA7BA1A8E9BA200B5B429 /* SecondViewController.m */,
-				5AFFA7BC1A8E9BA200B5B429 /* Main.storyboard */,
+				5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */,
+				5A85E2301A95684F0077D491 /* OAuth-1 */,
+				5A85E24A1A9568FD0077D491 /* Supporting Files */,
 				5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */,
 				5AFFA7C11A8E9BA200B5B429 /* LaunchScreen.xib */,
 				5AFFA7AF1A8E9BA200B5B429 /* Supporting Files */,
@@ -101,7 +175,8 @@
 		5AFFA7AF1A8E9BA200B5B429 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5AFFA7B01A8E9BA200B5B429 /* Info.plist */,
+				5A85E2421A9568BB0077D491 /* Info.plist */,
+				5A85E2431A9568BB0077D491 /* AlarmFit.pch */,
 				5AFFA7B11A8E9BA200B5B429 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -173,6 +248,7 @@
 				TargetAttributes = {
 					5AFFA7AB1A8E9BA200B5B429 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = L2K4US24GC;
 					};
 					5AFFA7C71A8E9BA200B5B429 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -204,9 +280,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AFFA7BE1A8E9BA200B5B429 /* Main.storyboard in Resources */,
+				5A85E2481A9568BB0077D491 /* Info.plist in Resources */,
+				5AFFA7BE1A8E9BA200B5B429 /* MainStoryboard.storyboard in Resources */,
+				5A85E2491A9568BB0077D491 /* AlarmFit.entitlements in Resources */,
 				5AFFA7C31A8E9BA200B5B429 /* LaunchScreen.xib in Resources */,
 				5AFFA7C01A8E9BA200B5B429 /* Images.xcassets in Resources */,
+				5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +303,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A85E2461A9568BB0077D491 /* NSString+URLEncoding.m in Sources */,
+				5A85E23A1A95687A0077D491 /* hmac.c in Sources */,
+				5A85E2451A9568BB0077D491 /* LoginWebViewController.m in Sources */,
 				5AFFA7BB1A8E9BA200B5B429 /* SecondViewController.m in Sources */,
 				5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */,
 				5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */,
+				5A85E23B1A95687A0077D491 /* sha1.c in Sources */,
+				5A85E2471A9568BB0077D491 /* OAuth1Controller.m in Sources */,
+				5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */,
 				5AFFA7B21A8E9BA200B5B429 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,12 +335,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5AFFA7BC1A8E9BA200B5B429 /* Main.storyboard */ = {
+		5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5AFFA7BD1A8E9BA200B5B429 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		5AFFA7C11A8E9BA200B5B429 /* LaunchScreen.xib */ = {
@@ -349,7 +434,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AlarmFit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,7 +446,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AlarmFit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -418,6 +507,7 @@
 				5AFFA7D41A8E9BA200B5B429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AFFA7D51A8E9BA200B5B429 /* Build configuration list for PBXNativeTarget "AlarmFitTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +516,7 @@
 				5AFFA7D71A8E9BA200B5B429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
