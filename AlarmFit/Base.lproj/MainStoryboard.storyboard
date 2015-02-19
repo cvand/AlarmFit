@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -70,7 +70,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Time" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="zEq-FU-wV5">
-                                <rect key="frame" x="52" y="58" width="210" height="42"/>
+                                <rect key="frame" x="55" y="138" width="210" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="-144"/>
+            <point key="canvasLocation" x="475" y="-210"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="1IW-Em-z9v">
@@ -215,7 +215,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uwd-fG-Cdi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="-144"/>
+            <point key="canvasLocation" x="942" y="-210"/>
         </scene>
         <!--Settings-->
         <scene sceneID="OaH-iu-wQQ">
@@ -319,7 +319,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGw-8X-szE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MWg-Fa-4Km" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="326"/>
+            <point key="canvasLocation" x="1422" y="-210"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -333,10 +333,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="p4J-9Z-GXs" kind="relationship" relationship="viewControllers" id="Okt-BM-Z9J"/>
                         <segue destination="i65-5F-uLW" kind="relationship" relationship="viewControllers" id="VvW-eP-wew"/>
                         <segue destination="WGK-zY-tL0" kind="relationship" relationship="viewControllers" id="xsz-9j-fs9"/>
+                        <segue destination="iE6-ZD-qLg" kind="relationship" relationship="viewControllers" id="YPJ-db-IGK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -367,11 +367,11 @@
             </objects>
             <point key="canvasLocation" x="-428" y="-880"/>
         </scene>
-        <!--Item-->
+        <!--Radio-->
         <scene sceneID="PRw-rp-xvo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iE6-ZD-qLg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5Jt-RI-GgW"/>
+                    <tabBarItem key="tabBarItem" title="Radio" id="5Jt-RI-GgW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ije-nc-hbA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -384,25 +384,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLf-WV-FA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="604" y="-144"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yjF-yv-XIo">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mYo-VL-w2Q" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qlO-Zv-1Ol">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="egs-Kt-qLF" kind="relationship" relationship="rootViewController" id="Btq-Ag-UfU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0qC-4a-BNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1698" y="340"/>
+            <point key="canvasLocation" x="52" y="-210"/>
         </scene>
         <!--Settings-->
         <scene sceneID="glb-5o-Pw5">
