@@ -25,7 +25,6 @@
     [super viewDidLoad];
     
     [self updateTime];
-    
     NSTimer* timer = [NSTimer timerWithTimeInterval:60.0f target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
