@@ -65,6 +65,9 @@
                                 <state key="normal" title="Set Alarm">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="k7m-9Z-iW7" kind="push" id="T8G-Io-brL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Time" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="zEq-FU-wV5">
                                 <rect key="frame" x="52" y="58" width="210" height="42"/>
@@ -205,7 +208,7 @@
                     <navigationItem key="navigationItem" title="Set Alarm" id="R6U-uY-sF6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8DG-ud-6KV">
                             <connections>
-                                <segue destination="mYo-VL-w2Q" kind="modal" id="guR-F2-OOd"/>
+                                <segue destination="egs-Kt-qLF" kind="push" id="NmU-nb-AU4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -302,6 +305,7 @@
                     <navigationItem key="navigationItem" title="New Alarm" id="YNk-tt-EL3">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WdJ-IW-b24">
                             <connections>
+                                <action selector="cancelTouched:" destination="egs-Kt-qLF" id="yxg-cO-BEu"/>
                                 <segue destination="MWg-Fa-4Km" kind="unwind" unwindAction="unwindToAlarms:" id="KSF-ii-3v7"/>
                             </connections>
                         </barButtonItem>
@@ -315,7 +319,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGw-8X-szE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MWg-Fa-4Km" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2096" y="340"/>
+            <point key="canvasLocation" x="1582" y="326"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -363,10 +367,11 @@
             </objects>
             <point key="canvasLocation" x="-428" y="-880"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="PRw-rp-xvo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iE6-ZD-qLg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5Jt-RI-GgW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ije-nc-hbA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -374,7 +379,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="k7m-9Z-iW7" kind="relationship" relationship="rootViewController" id="dAK-uI-qd1"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="bOZ-4n-FYi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLf-WV-FA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
