@@ -137,6 +137,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5AB1B03E1A9678B200446E31 /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				2F9B72261A95CEB500542332 /* Alarm.h */,
+				2F9B72271A95CEB500542332 /* Alarm.m */,
+				2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */,
+				2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */,
+				2F9B72201A95C0E800542332 /* NewAlarmViewController.h */,
+				2F9B72211A95C0E800542332 /* NewAlarmViewController.m */,
+			);
+			name = Alarm;
+			sourceTree = "<group>";
+		};
+		5AB1B03F1A9678D000446E31 /* TabControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5AFFA7B61A8E9BA200B5B429 /* FirstViewController.h */,
+				5AFFA7B71A8E9BA200B5B429 /* FirstViewController.m */,
+				5AFFA7B91A8E9BA200B5B429 /* SecondViewController.h */,
+				5AFFA7BA1A8E9BA200B5B429 /* SecondViewController.m */,
+			);
+			name = TabControllers;
+			sourceTree = "<group>";
+		};
+		5AB1B0401A96790000446E31 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5A85E23C1A9568BB0077D491 /* LoginWebViewController.h */,
+				5A85E23D1A9568BB0077D491 /* LoginWebViewController.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
 		5AFFA7A31A8E9BA200B5B429 = {
 			isa = PBXGroup;
 			children = (
@@ -163,21 +196,12 @@
 			isa = PBXGroup;
 			children = (
 				5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */,
-				5A85E23C1A9568BB0077D491 /* LoginWebViewController.h */,
-				5A85E23D1A9568BB0077D491 /* LoginWebViewController.m */,
 				5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */,
 				5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */,
-				5AFFA7B61A8E9BA200B5B429 /* FirstViewController.h */,
-				5AFFA7B71A8E9BA200B5B429 /* FirstViewController.m */,
-				5AFFA7B91A8E9BA200B5B429 /* SecondViewController.h */,
-				5AFFA7BA1A8E9BA200B5B429 /* SecondViewController.m */,
 				5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */,
-				2F9B72261A95CEB500542332 /* Alarm.h */,
-				2F9B72271A95CEB500542332 /* Alarm.m */,
-				2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */,
-				2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */,
-				2F9B72201A95C0E800542332 /* NewAlarmViewController.h */,
-				2F9B72211A95C0E800542332 /* NewAlarmViewController.m */,
+				5AB1B03F1A9678D000446E31 /* TabControllers */,
+				5AB1B03E1A9678B200446E31 /* Alarm */,
+				5AB1B0401A96790000446E31 /* Authentication */,
 				5A85E2301A95684F0077D491 /* OAuth-1 */,
 				5A85E24A1A9568FD0077D491 /* Supporting Files */,
 				5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */,

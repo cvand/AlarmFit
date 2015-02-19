@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self updateTime];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,4 +24,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)updateTime {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm"];
+    _timeView.text = [dateFormatter stringFromDate:[NSDate date]];
+    [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
+}
 @end
