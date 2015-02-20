@@ -33,8 +33,20 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if (sender != self.saveButton) return;
+    
+ 
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    [timeFormat setDateFormat:@"HH:mm"];
+    
+    NSDate *now = [_alarmPicker date];
+    NSString *theTime = [timeFormat stringFromDate:now];
+    
+    NSLog(@"\n"
+          "theTime: |%@| \n"
+          , theTime);
+
     self.alarm = [[Alarm alloc] init];
-    self.alarm.alarmTime = (NSString *)self.alarmPicker.date;
+    self.alarm.alarmTime = theTime;
     self.alarm.set = NO;
 }
 
