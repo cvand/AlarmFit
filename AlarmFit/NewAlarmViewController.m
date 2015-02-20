@@ -9,6 +9,9 @@
 #import "NewAlarmViewController.h"
 
 @interface NewAlarmViewController ()
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@property (strong, nonatomic) IBOutlet UIDatePicker *alarmPicker;
+
 
 @end
 
@@ -24,17 +27,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (sender != self.saveButton) return;
+    self.alarm = [[Alarm alloc] init];
+    self.alarm.alarmTime = (NSString *)self.alarmPicker.date;
+    self.alarm.set = NO;
 }
-*/
+
 - (IBAction)cancelTouched:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)buttonPress:(id)sender {
+}
+- (IBAction)saveButton:(id)sender {
+}
 @end

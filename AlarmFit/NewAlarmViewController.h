@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Alarm.h"
 
 @interface NewAlarmViewController : UIViewController
+@property Alarm *alarm;
 
 @end

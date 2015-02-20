@@ -7,6 +7,8 @@
 //
 
 #import "SetAlarmTableViewController.h"
+#import "Alarm.h"
+#import "NewAlarmViewController.h"
 
 @interface SetAlarmTableViewController ()
 @property NSMutableArray *alarms;
@@ -14,14 +16,35 @@
 
 @implementation SetAlarmTableViewController
 - (void)loadInitialData {
+    Alarm *alarm1 = [[Alarm alloc] init];
+    alarm1.alarmTime=@"08:15";
+    [self.alarms addObject:alarm1];
+    Alarm *alarm2 = [[Alarm alloc] init];
+    alarm2.alarmTime=@"08:45";
+    [self.alarms addObject:alarm2];
+    Alarm *alarm3 = [[Alarm alloc] init];
+    alarm3.alarmTime=@"10:15";
+    [self.alarms addObject:alarm3];
+    Alarm *alarm4 = [[Alarm alloc] init];
+    alarm4.alarmTime=@"11:15";
+    [self.alarms addObject:alarm4];
+    Alarm *alarm5 = [[Alarm alloc] init];
+    alarm5.alarmTime=@"10:15";
+    [self.alarms addObject:alarm5];
 }
 
 - (IBAction)unwindToAlarms:(UIStoryboardSegue *)segue {
-    
+    NewAlarmViewController *source = [segue sourceViewController];
+    Alarm *alarm = source.alarm;
+    if (alarm != nil) {
+        [self.alarms addObject:alarm];
+        [self.tableView reloadData];
+    }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.alarms = [[NSMutableArray alloc] init];
+    [self loadInitialData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,27 +55,34 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.alarms count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
+    Alarm *alarm = [self.alarms objectAtIndex:indexPath.row];
+    cell.textLabel.text = alarm.alarmTime;
+    if (alarm.set) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
 }
-*/
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    Alarm *tappedItem = [self.alarms objectAtIndex:indexPath.row];
+    tappedItem.set = !tappedItem.set;
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
