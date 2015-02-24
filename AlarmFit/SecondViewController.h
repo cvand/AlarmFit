@@ -10,6 +10,6 @@
 
 @interface SecondViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *timeView;
+@property (weak, nonatomic) IBOutlet UILabel *timeView;
 @end
 
