@@ -23,8 +23,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self updateTime];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -32,13 +30,6 @@
         [self login];
     }
 
-}
-
--(void)updateTime {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"hh:mm"];
-    _timeView.text = [dateFormatter stringFromDate:[NSDate date]];
-    [self performSelector:@selector(updateTime) withObject:self afterDelay:1.0];
 }
 
 - (void)didReceiveMemoryWarning {
