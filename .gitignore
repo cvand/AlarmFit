@@ -4,3 +4,5 @@
 *.xcbkptlist
 
 *.xccheckout
+
+*.xcuserstate
