@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F188FB11A9EC49400077585 /* sleepgraph.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F188FB01A9EC49400077585 /* sleepgraph.png */; };
+		2F188FB41A9EC72700077585 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F188FB31A9EC72700077585 /* StatisticsViewController.m */; };
+		2F188FB61A9EED4E00077585 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F188FB51A9EED4E00077585 /* avatar.png */; };
+		2F41F60E1A9EBB6E0003E0BC /* sleeppattern.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F41F60D1A9EBB6E0003E0BC /* sleeppattern.jpg */; };
 		2F9B72221A95C0E800542332 /* NewAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72211A95C0E800542332 /* NewAlarmViewController.m */; };
 		2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */; };
 		2F9B72281A95CEB500542332 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72271A95CEB500542332 /* Alarm.m */; };
@@ -45,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F188FB01A9EC49400077585 /* sleepgraph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sleepgraph.png; sourceTree = SOURCE_ROOT; };
+		2F188FB21A9EC72700077585 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		2F188FB31A9EC72700077585 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
+		2F188FB51A9EED4E00077585 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = ../../avatar.png; sourceTree = "<group>"; };
+		2F41F60D1A9EBB6E0003E0BC /* sleeppattern.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sleeppattern.jpg; path = ../../sleeppattern.jpg; sourceTree = "<group>"; };
 		2F9B72201A95C0E800542332 /* NewAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlarmViewController.h; sourceTree = "<group>"; };
 		2F9B72211A95C0E800542332 /* NewAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlarmViewController.m; sourceTree = "<group>"; };
 		2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAlarmTableViewController.h; sourceTree = "<group>"; };
@@ -129,6 +138,23 @@
 				2F9B72211A95C0E800542332 /* NewAlarmViewController.m */,
 			);
 			name = Controllers;
+		2F188FAF1A9EC03100077585 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				2F188FB21A9EC72700077585 /* StatisticsViewController.h */,
+				2F188FB31A9EC72700077585 /* StatisticsViewController.m */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
+		2F41F60C1A9EB6AA0003E0BC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2F188FB51A9EED4E00077585 /* avatar.png */,
+				2F188FB01A9EC49400077585 /* sleepgraph.png */,
+				2F41F60D1A9EBB6E0003E0BC /* sleeppattern.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		5A85E2301A95684F0077D491 /* OAuth-1 */ = {
@@ -218,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				5A81F0511A9EABFD0031F2CD /* UI Elements */,
+				2F188FAF1A9EC03100077585 /* Statistics */,
+				2F41F60C1A9EB6AA0003E0BC /* Images */,
 				5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */,
 				5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */,
 				5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */,
@@ -345,9 +373,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F188FB61A9EED4E00077585 /* avatar.png in Resources */,
+				2F41F60E1A9EBB6E0003E0BC /* sleeppattern.jpg in Resources */,
 				5A85E2481A9568BB0077D491 /* Info.plist in Resources */,
 				5AFFA7BE1A8E9BA200B5B429 /* MainStoryboard.storyboard in Resources */,
 				5A85E2491A9568BB0077D491 /* AlarmFit.entitlements in Resources */,
+				2F188FB11A9EC49400077585 /* sleepgraph.png in Resources */,
 				5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */,
 				5AFFA7C31A8E9BA200B5B429 /* LaunchScreen.xib in Resources */,
 				5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */,
@@ -368,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F188FB41A9EC72700077585 /* StatisticsViewController.m in Sources */,
 				2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */,
 				5A85E2461A9568BB0077D491 /* NSString+URLEncoding.m in Sources */,
 				5A85E23A1A95687A0077D491 /* hmac.c in Sources */,
