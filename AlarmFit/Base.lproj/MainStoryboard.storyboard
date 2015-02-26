@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Radio-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Home" id="9pv-A4-QxB" userLabel="Home" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController title="Radio" id="9pv-A4-QxB" userLabel="Radio" customClass="FirstViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" id="wGQ-7g-Dvd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" id="Vsz-EJ-OXg">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="API response goes here..." id="Sv7-h6-3mt">
                                 <rect key="frame" x="40" y="99" width="240" height="413"/>
@@ -37,8 +36,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Radio" image="microphone" id="acW-dT-cKf">
-                        <inset key="imageInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <tabBarItem key="tabBarItem" title="Radio" image="radio" id="acW-dT-cKf">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="responseText" destination="Sv7-h6-3mt" id="hV6-kM-dxz"/>
@@ -48,21 +47,22 @@
             </objects>
             <point key="canvasLocation" x="68" y="-875"/>
         </scene>
-        <!--Radio-->
+        <!--Home-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController title="Radio" id="8rJ-Kc-sve" userLabel="Radio" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController title="Home" id="8rJ-Kc-sve" userLabel="Home" customClass="SecondViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" id="ljM-hV-QQf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" id="SXd-MB-bDe">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Syp-eG-qCh">
-                                <rect key="frame" x="111" y="338" width="98" height="30"/>
+                                <rect key="frame" x="101" y="350" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Set Alarm">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -71,10 +71,17 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Time" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="zEq-FU-wV5">
-                                <rect key="frame" x="55" y="138" width="210" height="42"/>
+                                <rect key="frame" x="55" y="128" width="210" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="70"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No alarms set" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LV9-lE-SeA">
+                                <rect key="frame" x="91" y="199" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -96,9 +103,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" id="T5I-la-uBW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" id="T5I-la-uBW">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q7I-oE-Xvi">
                                 <rect key="frame" x="119" y="105" width="71" height="21"/>
@@ -110,8 +117,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" image="sleep" id="46C-NG-eiL">
-                        <inset key="imageInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="sleep" selectedImage="icon_sleep" id="46C-NG-eiL">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5C9-B0-Uw9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -126,9 +133,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" id="Vym-DN-ZCa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" id="Vym-DN-ZCa">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hVl-sb-5Kp">
                                 <rect key="frame" x="119" y="104" width="82" height="21"/>
@@ -140,8 +147,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="account" id="Tio-Tz-6Pu">
-                        <inset key="imageInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="account" selectedImage="icon_user" id="Tio-Tz-6Pu">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9E-Ue-O8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,7 +338,7 @@
                                     <!--2015-02-19 07:21:33 +0000-->
                                 </date>
                             </datePicker>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" id="BFz-qp-ChY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" id="BFz-qp-ChY">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -368,11 +375,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="iE6-ZD-qLg" kind="relationship" relationship="viewControllers" id="OpM-l8-U4b"/>
-                        <segue destination="p4J-9Z-GXs" kind="relationship" relationship="viewControllers" id="KfX-O1-GNh"/>
-                        <segue destination="i65-5F-uLW" kind="relationship" relationship="viewControllers" id="KH9-LA-XDh"/>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="i1d-gq-pfF"/>
-                        <segue destination="WGK-zY-tL0" kind="relationship" relationship="viewControllers" id="Um7-SY-nAF"/>
+                        <segue destination="iE6-ZD-qLg" kind="relationship" relationship="viewControllers" id="5JP-Kk-4IY"/>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="PVx-X5-XOb"/>
+                        <segue destination="p4J-9Z-GXs" kind="relationship" relationship="viewControllers" id="ijI-Rm-X9x"/>
+                        <segue destination="i65-5F-uLW" kind="relationship" relationship="viewControllers" id="wZ9-6l-lAr"/>
+                        <segue destination="WGK-zY-tL0" kind="relationship" relationship="viewControllers" id="7NB-FH-i6z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -406,9 +413,9 @@
         <!--Home-->
         <scene sceneID="PRw-rp-xvo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iE6-ZD-qLg" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iE6-ZD-qLg" customClass="AlarmNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="5Jt-RI-GgW">
-                        <inset key="imageInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ije-nc-hbA">
@@ -429,7 +436,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WGK-zY-tL0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="s5h-am-8lr">
-                        <inset key="imageInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LsP-VM-mDl">
@@ -447,12 +454,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account" width="68" height="66"/>
-        <image name="background" width="1264" height="2241"/>
-        <image name="home" width="68" height="66"/>
-        <image name="microphone" width="68" height="66"/>
-        <image name="settings" width="68" height="66"/>
-        <image name="sleep" width="68" height="66"/>
+        <image name="account" width="57" height="57"/>
+        <image name="home" width="57" height="57"/>
+        <image name="icon_sleep" width="68" height="66"/>
+        <image name="icon_user" width="68" height="66"/>
+        <image name="radio" width="57" height="57"/>
+        <image name="settings" width="57" height="57"/>
+        <image name="sleep" width="57" height="57"/>
+        <image name="user" width="421" height="747"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

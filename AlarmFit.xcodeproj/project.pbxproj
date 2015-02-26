@@ -11,6 +11,8 @@
 		2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */; };
 		2F9B72281A95CEB500542332 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72271A95CEB500542332 /* Alarm.m */; };
 		5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1378451A95841700CA01BF /* Default-568h@2x.png */; };
+		5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */; };
+		5A81F04D1A9E80510031F2CD /* AlarmNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */; };
 		5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2331A95687A0077D491 /* Base64Transcoder.c */; };
 		5A85E23A1A95687A0077D491 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2351A95687A0077D491 /* hmac.c */; };
 		5A85E23B1A95687A0077D491 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2371A95687A0077D491 /* sha1.c */; };
@@ -27,7 +29,6 @@
 		5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7B71A8E9BA200B5B429 /* FirstViewController.m */; };
 		5AFFA7BB1A8E9BA200B5B429 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BA1A8E9BA200B5B429 /* SecondViewController.m */; };
 		5AFFA7BE1A8E9BA200B5B429 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */; };
-		5AFFA7C01A8E9BA200B5B429 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */; };
 		5AFFA7C31A8E9BA200B5B429 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7C11A8E9BA200B5B429 /* LaunchScreen.xib */; };
 		5AFFA7CF1A8E9BA200B5B429 /* AlarmFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7CE1A8E9BA200B5B429 /* AlarmFitTests.m */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,8 @@
 		2F9B72261A95CEB500542332 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		2F9B72271A95CEB500542332 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		5A1378451A95841700CA01BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5A81F04B1A9E80510031F2CD /* AlarmNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmNavigationController.h; sourceTree = "<group>"; };
+		5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmNavigationController.m; sourceTree = "<group>"; };
 		5A85E2331A95687A0077D491 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Base64Transcoder.c; path = Crypto/Base64Transcoder.c; sourceTree = "<group>"; };
 		5A85E2341A95687A0077D491 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64Transcoder.h; path = Crypto/Base64Transcoder.h; sourceTree = "<group>"; };
 		5A85E2351A95687A0077D491 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = Crypto/hmac.c; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */,
 				5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */,
 				5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */,
+				5A81F04B1A9E80510031F2CD /* AlarmNavigationController.h */,
+				5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */,
 				5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */,
 				5AB1B03F1A9678D000446E31 /* TabControllers */,
 				5AB1B03E1A9678B200446E31 /* Alarm */,
@@ -322,8 +327,8 @@
 				5A85E2481A9568BB0077D491 /* Info.plist in Resources */,
 				5AFFA7BE1A8E9BA200B5B429 /* MainStoryboard.storyboard in Resources */,
 				5A85E2491A9568BB0077D491 /* AlarmFit.entitlements in Resources */,
+				5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */,
 				5AFFA7C31A8E9BA200B5B429 /* LaunchScreen.xib in Resources */,
-				5AFFA7C01A8E9BA200B5B429 /* Images.xcassets in Resources */,
 				5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +350,7 @@
 				2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */,
 				5A85E2461A9568BB0077D491 /* NSString+URLEncoding.m in Sources */,
 				5A85E23A1A95687A0077D491 /* hmac.c in Sources */,
+				5A81F04D1A9E80510031F2CD /* AlarmNavigationController.m in Sources */,
 				5A85E2451A9568BB0077D491 /* LoginWebViewController.m in Sources */,
 				5AFFA7BB1A8E9BA200B5B429 /* SecondViewController.m in Sources */,
 				5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */,
@@ -476,6 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AlarmFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -488,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AlarmFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
