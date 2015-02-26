@@ -13,6 +13,7 @@
 		5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1378451A95841700CA01BF /* Default-568h@2x.png */; };
 		5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */; };
 		5A81F04D1A9E80510031F2CD /* AlarmNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */; };
+		5A81F05A1A9EAF4E0031F2CD /* SwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A81F0591A9EAF4E0031F2CD /* SwitchTableViewCell.m */; };
 		5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2331A95687A0077D491 /* Base64Transcoder.c */; };
 		5A85E23A1A95687A0077D491 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2351A95687A0077D491 /* hmac.c */; };
 		5A85E23B1A95687A0077D491 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 5A85E2371A95687A0077D491 /* sha1.c */; };
@@ -53,6 +54,8 @@
 		5A1378451A95841700CA01BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5A81F04B1A9E80510031F2CD /* AlarmNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmNavigationController.h; sourceTree = "<group>"; };
 		5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmNavigationController.m; sourceTree = "<group>"; };
+		5A81F0581A9EAF4E0031F2CD /* SwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchTableViewCell.h; sourceTree = "<group>"; };
+		5A81F0591A9EAF4E0031F2CD /* SwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchTableViewCell.m; sourceTree = "<group>"; };
 		5A85E2331A95687A0077D491 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Base64Transcoder.c; path = Crypto/Base64Transcoder.c; sourceTree = "<group>"; };
 		5A85E2341A95687A0077D491 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64Transcoder.h; path = Crypto/Base64Transcoder.h; sourceTree = "<group>"; };
 		5A85E2351A95687A0077D491 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = Crypto/hmac.c; sourceTree = "<group>"; };
@@ -108,6 +111,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A81F0511A9EABFD0031F2CD /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				5A81F0581A9EAF4E0031F2CD /* SwitchTableViewCell.h */,
+				5A81F0591A9EAF4E0031F2CD /* SwitchTableViewCell.m */,
+			);
+			name = "UI Elements";
+			sourceTree = "<group>";
+		};
+		5A81F05B1A9EB0330031F2CD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */,
+				2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */,
+				2F9B72201A95C0E800542332 /* NewAlarmViewController.h */,
+				2F9B72211A95C0E800542332 /* NewAlarmViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		5A85E2301A95684F0077D491 /* OAuth-1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,17 +163,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5AB1B03E1A9678B200446E31 /* Alarm */ = {
+		5AB1B03E1A9678B200446E31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				2F9B72261A95CEB500542332 /* Alarm.h */,
 				2F9B72271A95CEB500542332 /* Alarm.m */,
-				2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */,
-				2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */,
-				2F9B72201A95C0E800542332 /* NewAlarmViewController.h */,
-				2F9B72211A95C0E800542332 /* NewAlarmViewController.m */,
 			);
-			name = Alarm;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		5AB1B03F1A9678D000446E31 /* TabControllers */ = {
@@ -198,14 +217,16 @@
 		5AFFA7AE1A8E9BA200B5B429 /* AlarmFit */ = {
 			isa = PBXGroup;
 			children = (
+				5A81F0511A9EABFD0031F2CD /* UI Elements */,
 				5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */,
 				5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */,
 				5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */,
 				5A81F04B1A9E80510031F2CD /* AlarmNavigationController.h */,
 				5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */,
+				5A81F05B1A9EB0330031F2CD /* Controllers */,
 				5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */,
 				5AB1B03F1A9678D000446E31 /* TabControllers */,
-				5AB1B03E1A9678B200446E31 /* Alarm */,
+				5AB1B03E1A9678B200446E31 /* Model */,
 				5AB1B0401A96790000446E31 /* Authentication */,
 				5A85E2301A95684F0077D491 /* OAuth-1 */,
 				5A85E24A1A9568FD0077D491 /* Supporting Files */,
@@ -357,6 +378,7 @@
 				5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */,
 				2F9B72221A95C0E800542332 /* NewAlarmViewController.m in Sources */,
 				5A85E23B1A95687A0077D491 /* sha1.c in Sources */,
+				5A81F05A1A9EAF4E0031F2CD /* SwitchTableViewCell.m in Sources */,
 				2F9B72281A95CEB500542332 /* Alarm.m in Sources */,
 				5A85E2471A9568BB0077D491 /* OAuth1Controller.m in Sources */,
 				5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */,

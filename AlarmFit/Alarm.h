@@ -12,7 +12,6 @@
 
 @property NSString *alarmTime;
 @property BOOL set;
-@property (readonly) NSDate *creationDate;
 
 @end
 

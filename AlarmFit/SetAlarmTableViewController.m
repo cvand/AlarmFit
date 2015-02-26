@@ -9,36 +9,57 @@
 #import "SetAlarmTableViewController.h"
 #import "Alarm.h"
 #import "NewAlarmViewController.h"
+#import "SwitchTableViewCell.h"
+
+static NSString *CellIdentifier = @"ListPrototypeCell";
+
 
 @interface SetAlarmTableViewController ()
 @property NSMutableArray *alarms;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
+
 @implementation SetAlarmTableViewController
+
 - (void)loadInitialData {
     Alarm *alarm1 = [[Alarm alloc] init];
     alarm1.alarmTime=@"08:15";
+    alarm1.set = NO;
     [self.alarms addObject:alarm1];
     Alarm *alarm2 = [[Alarm alloc] init];
     alarm2.alarmTime=@"08:45";
+    alarm2.set = YES;
     [self.alarms addObject:alarm2];
     Alarm *alarm3 = [[Alarm alloc] init];
     alarm3.alarmTime=@"10:15";
+    alarm3.set = NO;
     [self.alarms addObject:alarm3];
     Alarm *alarm4 = [[Alarm alloc] init];
     alarm4.alarmTime=@"11:15";
+    alarm4.set = NO;
     [self.alarms addObject:alarm4];
     Alarm *alarm5 = [[Alarm alloc] init];
-    alarm5.alarmTime=@"10:15";
+    alarm5.alarmTime=@"12:15";
+    alarm5.set = NO;
     [self.alarms addObject:alarm5];
 }
 
 - (IBAction)unwindToAlarms:(UIStoryboardSegue *)segue {
     NewAlarmViewController *source = [segue sourceViewController];
     Alarm *alarm = source.alarm;
+    
     if (alarm != nil) {
+        alarm.set = YES;
         [self.alarms addObject:alarm];
+        [self unsetAlarms];
+        
         [self.tableView reloadData];
+        
+        NSInteger index = [_alarms indexOfObject:alarm];
+        NSIndexPath *path = [NSIndexPath indexPathForItem:index inSection:0];
+        [self setSwitch:YES forElementAtIndex:path inTableView:self.tableView];
     }
 }
 - (void)viewDidLoad {
@@ -52,8 +73,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
@@ -66,30 +85,66 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
+    SwitchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     Alarm *alarm = [self.alarms objectAtIndex:indexPath.row];
-    cell.textLabel.text = alarm.alarmTime;
-    if (alarm.set) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+    cell.label.text = alarm.alarmTime;
+    [cell.toggleSwitch setOn:alarm.set animated:YES];
+    
+    [cell.toggleSwitch addTarget:self action:@selector(stateChanged:) forControlEvents:UIControlEventValueChanged];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    Alarm *tappedItem = [self.alarms objectAtIndex:indexPath.row];
-    tappedItem.set = !tappedItem.set;
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
-/*
-// Override to support conditional editing of the table view.
+
+- (void)toggleAlarm:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView {
+    Alarm *alarm = [self.alarms objectAtIndex:indexPath.row];
+    
+    //clear toggles first
+    [self unsetAlarms];
+    
+    alarm.set = !alarm.set;
+    if (alarm.set) {
+        [self setSwitch:alarm.set forElementAtIndex:indexPath inTableView:tableView];
+    }
+}
+
+- (void)unsetAlarms {
+    for (Alarm *al in _alarms) {
+        if (al.set) {
+            al.set = NO;
+            NSInteger index = [_alarms indexOfObject:al];
+            NSIndexPath *path = [NSIndexPath indexPathForItem:index inSection:0];
+            [self setSwitch:NO forElementAtIndex:path inTableView:self.tableView];
+        }
+    }
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
-*/
+
+- (void)stateChanged:(UISwitch *)switchState {
+    UITableViewCell * cell = (UITableViewCell*) switchState.superview;
+    CGPoint center= switchState.center;
+    CGPoint rootViewPoint = [cell convertPoint:center toView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:rootViewPoint];
+    if ( indexPath == nil )
+        return;
+    [self toggleAlarm:indexPath inTableView:self.tableView];
+    
+}
+
+
+- (void)setSwitch:(BOOL)set forElementAtIndex:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView {
+    SwitchTableViewCell *cell = (SwitchTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [cell.toggleSwitch setOn:set animated:YES];
+}
+
 
 /*
 // Override to support editing the table view.
@@ -109,13 +164,11 @@
 }
 */
 
-/*
-// Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return NO;
 }
-*/
+
 
 /*
 #pragma mark - Navigation

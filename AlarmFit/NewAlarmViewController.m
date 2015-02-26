@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _alarmPicker.datePickerMode = UIDatePickerModeTime;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,10 +41,6 @@
     NSDate *now = [_alarmPicker date];
     NSString *theTime = [timeFormat stringFromDate:now];
     
-    NSLog(@"\n"
-          "theTime: |%@| \n"
-          , theTime);
-
     self.alarm = [[Alarm alloc] init];
     self.alarm.alarmTime = theTime;
     self.alarm.set = NO;
