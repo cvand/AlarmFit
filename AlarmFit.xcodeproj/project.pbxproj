@@ -25,6 +25,12 @@
 		5A85E24C1A9574630077D491 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24B1A9574630077D491 /* UIKit.framework */; };
 		5A85E24E1A95746E0077D491 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24D1A95746E0077D491 /* Foundation.framework */; };
 		5A85E2501A9574760077D491 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24F1A9574760077D491 /* CoreGraphics.framework */; };
+		5ABC176E1A9F1AC300F0EF3B /* battery.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABC176D1A9F1AC300F0EF3B /* battery.png */; };
+		5AF99D591A9F172400C8C47F /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF99D581A9F172400C8C47F /* avatar.png */; };
+		5AFDB4D61A9F2507008A4E77 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4D51A9F2507008A4E77 /* StatisticsViewController.m */; };
+		5AFDB4D81A9F2984008A4E77 /* sleep_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFDB4D71A9F2984008A4E77 /* sleep_graph.png */; };
+		5AFDB4DB1A9F2E15008A4E77 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4DA1A9F2E15008A4E77 /* SettingsViewController.m */; };
+		5AFDB4DE1A9F2E33008A4E77 /* PersonalAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4DD1A9F2E33008A4E77 /* PersonalAlarmViewController.m */; };
 		5AFFA7B21A8E9BA200B5B429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7B11A8E9BA200B5B429 /* main.m */; };
 		5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */; };
 		5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7B71A8E9BA200B5B429 /* FirstViewController.m */; };
@@ -74,6 +80,15 @@
 		5A85E24B1A9574630077D491 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5A85E24D1A95746E0077D491 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A85E24F1A9574760077D491 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5ABC176D1A9F1AC300F0EF3B /* battery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = battery.png; path = "../../../../../../cmu/Courses/08766 - MPCS/AlarmFit/AlarmFit/AlarmFit/battery.png"; sourceTree = "<group>"; };
+		5AF99D581A9F172400C8C47F /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = "../../../../../../cmu/Courses/08766 - MPCS/AlarmFit/AlarmFit/AlarmFit/avatar.png"; sourceTree = "<group>"; };
+		5AFDB4D41A9F2507008A4E77 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
+		5AFDB4D51A9F2507008A4E77 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
+		5AFDB4D71A9F2984008A4E77 /* sleep_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sleep_graph.png; path = "../../../../../../cmu/Courses/08766 - MPCS/AlarmFit/AlarmFit/AlarmFit/sleep_graph.png"; sourceTree = "<group>"; };
+		5AFDB4D91A9F2E15008A4E77 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		5AFDB4DA1A9F2E15008A4E77 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		5AFDB4DC1A9F2E33008A4E77 /* PersonalAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalAlarmViewController.h; sourceTree = "<group>"; };
+		5AFDB4DD1A9F2E33008A4E77 /* PersonalAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalAlarmViewController.m; sourceTree = "<group>"; };
 		5AFFA7AC1A8E9BA200B5B429 /* AlarmFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFFA7B11A8E9BA200B5B429 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -179,6 +194,12 @@
 				5AFFA7B71A8E9BA200B5B429 /* FirstViewController.m */,
 				5AFFA7B91A8E9BA200B5B429 /* SecondViewController.h */,
 				5AFFA7BA1A8E9BA200B5B429 /* SecondViewController.m */,
+				5AFDB4D41A9F2507008A4E77 /* StatisticsViewController.h */,
+				5AFDB4D51A9F2507008A4E77 /* StatisticsViewController.m */,
+				5AFDB4D91A9F2E15008A4E77 /* SettingsViewController.h */,
+				5AFDB4DA1A9F2E15008A4E77 /* SettingsViewController.m */,
+				5AFDB4DC1A9F2E33008A4E77 /* PersonalAlarmViewController.h */,
+				5AFDB4DD1A9F2E33008A4E77 /* PersonalAlarmViewController.m */,
 			);
 			name = TabControllers;
 			sourceTree = "<group>";
@@ -190,6 +211,16 @@
 				5A85E23D1A9568BB0077D491 /* LoginWebViewController.m */,
 			);
 			name = Authentication;
+			sourceTree = "<group>";
+		};
+		5AF99D5A1A9F172C00C8C47F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5AFDB4D71A9F2984008A4E77 /* sleep_graph.png */,
+				5ABC176D1A9F1AC300F0EF3B /* battery.png */,
+				5AF99D581A9F172400C8C47F /* avatar.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		5AFFA7A31A8E9BA200B5B429 = {
@@ -222,6 +253,7 @@
 				5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */,
 				5AFFA7B41A8E9BA200B5B429 /* AppDelegate.m */,
 				5A81F04B1A9E80510031F2CD /* AlarmNavigationController.h */,
+				5AF99D5A1A9F172C00C8C47F /* Images */,
 				5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */,
 				5A81F05B1A9EB0330031F2CD /* Controllers */,
 				5AFFA7BC1A8E9BA200B5B429 /* MainStoryboard.storyboard */,
@@ -346,6 +378,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A85E2481A9568BB0077D491 /* Info.plist in Resources */,
+				5AFDB4D81A9F2984008A4E77 /* sleep_graph.png in Resources */,
+				5ABC176E1A9F1AC300F0EF3B /* battery.png in Resources */,
+				5AF99D591A9F172400C8C47F /* avatar.png in Resources */,
 				5AFFA7BE1A8E9BA200B5B429 /* MainStoryboard.storyboard in Resources */,
 				5A85E2491A9568BB0077D491 /* AlarmFit.entitlements in Resources */,
 				5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */,
@@ -370,6 +405,7 @@
 			files = (
 				2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */,
 				5A85E2461A9568BB0077D491 /* NSString+URLEncoding.m in Sources */,
+				5AFDB4DE1A9F2E33008A4E77 /* PersonalAlarmViewController.m in Sources */,
 				5A85E23A1A95687A0077D491 /* hmac.c in Sources */,
 				5A81F04D1A9E80510031F2CD /* AlarmNavigationController.m in Sources */,
 				5A85E2451A9568BB0077D491 /* LoginWebViewController.m in Sources */,
@@ -377,12 +413,14 @@
 				5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */,
 				5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */,
 				2F9B72221A95C0E800542332 /* NewAlarmViewController.m in Sources */,
+				5AFDB4DB1A9F2E15008A4E77 /* SettingsViewController.m in Sources */,
 				5A85E23B1A95687A0077D491 /* sha1.c in Sources */,
 				5A81F05A1A9EAF4E0031F2CD /* SwitchTableViewCell.m in Sources */,
 				2F9B72281A95CEB500542332 /* Alarm.m in Sources */,
 				5A85E2471A9568BB0077D491 /* OAuth1Controller.m in Sources */,
 				5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */,
 				5AFFA7B21A8E9BA200B5B429 /* main.m in Sources */,
+				5AFDB4D61A9F2507008A4E77 /* StatisticsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

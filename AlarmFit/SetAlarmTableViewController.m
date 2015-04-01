@@ -66,6 +66,8 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     [super viewDidLoad];
     self.alarms = [[NSMutableArray alloc] init];
     [self loadInitialData];
+    
+//    self.tableView.backgroundColor = [UIColor colorWithRed:88 green:114 blue:161 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
