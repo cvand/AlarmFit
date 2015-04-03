@@ -14,9 +14,20 @@
 
 @implementation AppDelegate
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    
     // Override point for customization after application launch.
+    
+    // Handle launching from a notification
+    UILocalNotification *localNotif =
+    [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotif) {
+        NSLog(@"In app delegate did finish launching with options");
+        //NSLog(@"Recieved Notification %@",localNotif);
+    }
+    
     return YES;
 }
 
@@ -40,6 +51,15 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notif {
+    // Handle the notificaton when the app is running
+    NSLog(@"In app delegate did receive local notification");
+    UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"Alarm" message:@"Wake up now!"
+    delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [notificationAlert show];
+    //NSLog(@"Recieved Notification %@",notif);
 }
 
 @end
