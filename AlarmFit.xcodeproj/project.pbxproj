@@ -25,10 +25,7 @@
 		5A85E24C1A9574630077D491 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24B1A9574630077D491 /* UIKit.framework */; };
 		5A85E24E1A95746E0077D491 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24D1A95746E0077D491 /* Foundation.framework */; };
 		5A85E2501A9574760077D491 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24F1A9574760077D491 /* CoreGraphics.framework */; };
-		5ABC176E1A9F1AC300F0EF3B /* battery.png in Resources */ = {isa = PBXBuildFile; fileRef = 5ABC176D1A9F1AC300F0EF3B /* battery.png */; };
-		5AF99D591A9F172400C8C47F /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AF99D581A9F172400C8C47F /* avatar.png */; };
 		5AFDB4D61A9F2507008A4E77 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4D51A9F2507008A4E77 /* StatisticsViewController.m */; };
-		5AFDB4D81A9F2984008A4E77 /* sleep_graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AFDB4D71A9F2984008A4E77 /* sleep_graph.png */; };
 		5AFDB4DB1A9F2E15008A4E77 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4DA1A9F2E15008A4E77 /* SettingsViewController.m */; };
 		5AFDB4DE1A9F2E33008A4E77 /* PersonalAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4DD1A9F2E33008A4E77 /* PersonalAlarmViewController.m */; };
 		5AFFA7B21A8E9BA200B5B429 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFA7B11A8E9BA200B5B429 /* main.m */; };
@@ -378,9 +375,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A85E2481A9568BB0077D491 /* Info.plist in Resources */,
-				5AFDB4D81A9F2984008A4E77 /* sleep_graph.png in Resources */,
-				5ABC176E1A9F1AC300F0EF3B /* battery.png in Resources */,
-				5AF99D591A9F172400C8C47F /* avatar.png in Resources */,
 				5AFFA7BE1A8E9BA200B5B429 /* MainStoryboard.storyboard in Resources */,
 				5A85E2491A9568BB0077D491 /* AlarmFit.entitlements in Resources */,
 				5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */,
