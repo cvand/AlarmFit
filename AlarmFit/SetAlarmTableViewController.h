@@ -10,4 +10,8 @@
 
 @interface SetAlarmTableViewController : UITableViewController
 - (IBAction)unwindToAlarms:(UIStoryboardSegue *)segue;
+
+
+- (IBAction) scheduleAlarm:(id) sender;
+
 @end

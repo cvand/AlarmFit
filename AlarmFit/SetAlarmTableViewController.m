@@ -46,6 +46,28 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     [self.alarms addObject:alarm5];
 }
 
+- (IBAction) scheduleAlarm:(id) sender {
+    NSDate *currentDate = [NSDate date];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    comps.day = 02;
+    comps.month = 04;
+    comps.year = 2015;
+    comps.hour = 01;
+    comps.minute = 29;
+    //NSDate * nextAlertTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    //notification.fireDate = nextAlertTime;
+    
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:7];
+    notification.timeZone = [NSTimeZone systemTimeZone];
+    notification.alertAction = @"Show";
+    notification.alertBody = @"Wake up now!";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    //notification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+}
+
 - (IBAction)unwindToAlarms:(UIStoryboardSegue *)segue {
     NewAlarmViewController *source = [segue sourceViewController];
     Alarm *alarm = source.alarm;
@@ -79,6 +101,8 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     // Return the number of sections.
     return 1;
 }
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
@@ -148,6 +172,7 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
 }
 
 
+
 /*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -181,5 +206,13 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     // Pass the selected object to the new view controller.
 }
 */
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    
+    UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"Notification"    message:@"This local notification"
+                                                               delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    
+    [notificationAlert show];
+    NSLog(@"didReceiveLocalNotification");
+}
 
 @end
