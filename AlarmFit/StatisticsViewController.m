@@ -10,6 +10,7 @@
 #import "FirstViewController.h"
 #import "OAuth1Controller.h"
 #import "LoginWebViewController.h"
+#import "Preferences.h"
 
 @interface StatisticsViewController (){
     int previousStepperValue;
@@ -84,24 +85,27 @@
     NSDate *baseDate = [NSDate date];
     
     NSData *data = [self getSleepDataForDate:baseDate];
-
     
-    [self.arrayOfValues addObject:@(1)];
-    [self.arrayOfDates addObject:baseDate];
-    [self.arrayOfValues addObject:@(2)];
-    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[0]]]; // Dates for the X-Axis of the graph
-    [self.arrayOfValues addObject:@(1)];
-    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[1]]]; // Dates for the X-Axis of the graph
-    [self.arrayOfValues addObject:@(0)];
-    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[2]]]; // Dates for the X-Axis of the graph
-    [self.arrayOfValues addObject:@(2)];
-    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[3]]]; // Dates for the X-Axis of the graph
-    [self.arrayOfValues addObject:@(1)];
-    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[4]]]; // Dates for the X-Axis of the graph
-    [self.arrayOfValues addObject:@(0)];
-    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[5]]]; // Dates for the X-Axis of the graph
+    NSLog(@"%@", data);
     
-    totalNumber = 7;
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&error];
+    
+    NSArray* sleepData = [json objectForKey:@"sleep"];
+    NSDictionary *sleepD = sleepData[0];
+    NSArray *sleep = [sleepD objectForKey:@"minuteData"];
+    
+    for (NSDictionary* minute in sleep) {
+        NSString *time = [minute objectForKey:@"dateTime"];
+        NSString *value = [minute objectForKey:@"value"];
+        NSLog(@"minute: %@", value);
+        [self.arrayOfValues addObject:value];
+        [self.arrayOfDates addObject:time];
+    }
+    
+    totalNumber = [sleep count];
 }
 
 - (NSDate *)dateForGraphAfterDate:(NSDate *)date {
@@ -193,6 +197,17 @@
 }
 
 - (void)login {
+    
+    NSString *token = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN];
+    NSString *secret = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN_SECRET];
+    
+    if (token != nil && secret != nil) {
+        self.oauthToken = token;
+        self.oauthTokenSecret = secret;
+        [self loadGraph];
+        return;
+    }
+    
     LoginWebViewController *loginWebViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginWebViewController"];
     
     [self presentViewController:loginWebViewController
@@ -203,6 +218,10 @@
                                  // Store your tokens for authenticating your later requests, consider storing the tokens in the Keychain
                                  self.oauthToken = oauthTokens[@"oauth_token"];
                                  self.oauthTokenSecret = oauthTokens[@"oauth_token_secret"];
+                                 
+                                 [Preferences setUserPreference:self.oauthToken forKey:FITBIT_OAUTH_TOKEN];
+                                 
+                                 [Preferences setUserPreference:self.oauthTokenSecret forKey:FITBIT_OAUTH_TOKEN_SECRET];
                              }
                              else
                              {

@@ -29,6 +29,7 @@
 		5A85E24C1A9574630077D491 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24B1A9574630077D491 /* UIKit.framework */; };
 		5A85E24E1A95746E0077D491 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24D1A95746E0077D491 /* Foundation.framework */; };
 		5A85E2501A9574760077D491 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A85E24F1A9574760077D491 /* CoreGraphics.framework */; };
+		5AA801641AD2485B00884190 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA801631AD2485B00884190 /* Preferences.m */; };
 		5AFDB4D61A9F2507008A4E77 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4D51A9F2507008A4E77 /* StatisticsViewController.m */; };
 		5AFDB4DB1A9F2E15008A4E77 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4DA1A9F2E15008A4E77 /* SettingsViewController.m */; };
 		5AFDB4DE1A9F2E33008A4E77 /* PersonalAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFDB4DD1A9F2E33008A4E77 /* PersonalAlarmViewController.m */; };
@@ -89,6 +90,8 @@
 		5A85E24B1A9574630077D491 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5A85E24D1A95746E0077D491 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A85E24F1A9574760077D491 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5AA801621AD2485B00884190 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		5AA801631AD2485B00884190 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
 		5ABC176D1A9F1AC300F0EF3B /* battery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = battery.png; path = "../../../../../../cmu/Courses/08766 - MPCS/AlarmFit/AlarmFit/AlarmFit/battery.png"; sourceTree = "<group>"; };
 		5AF99D581A9F172400C8C47F /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = "../../../../../../cmu/Courses/08766 - MPCS/AlarmFit/AlarmFit/AlarmFit/avatar.png"; sourceTree = "<group>"; };
 		5AFDB4D41A9F2507008A4E77 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 			children = (
 				2F9B72261A95CEB500542332 /* Alarm.h */,
 				2F9B72271A95CEB500542332 /* Alarm.m */,
+				5AA801621AD2485B00884190 /* Preferences.h */,
+				5AA801631AD2485B00884190 /* Preferences.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				5AFDB4DE1A9F2E33008A4E77 /* PersonalAlarmViewController.m in Sources */,
 				5A85E23A1A95687A0077D491 /* hmac.c in Sources */,
 				5A81F04D1A9E80510031F2CD /* AlarmNavigationController.m in Sources */,
+				5AA801641AD2485B00884190 /* Preferences.m in Sources */,
 				5A85E2451A9568BB0077D491 /* LoginWebViewController.m in Sources */,
 				5AFFA7BB1A8E9BA200B5B429 /* SecondViewController.m in Sources */,
 				5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */,

@@ -156,6 +156,8 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString)
 
 @implementation OAuth1Controller
 
+NSMutableData *receivedData;
+
 - (void)loginWithWebView:(UIWebView *)webWiew completion:(void (^)(NSDictionary *oauthTokens, NSError *error))completion
 {
     self.webView = webWiew;
@@ -171,6 +173,10 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString)
      {
          NSString *oauth_token_secret = responseParams[@"oauth_token_secret"];
          NSString *oauth_token = responseParams[@"oauth_token"];
+         
+//         NSLog(@"OAuth Token:  %@", oauth_token);
+//         NSLog(@"OAuth Token Secret:  %@", oauth_token_secret);
+         
          if (oauth_token_secret
              && oauth_token)
          {
@@ -247,6 +253,9 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString)
     authenticate_url = [authenticate_url stringByAppendingFormat:@"&oauth_callback=%@", oauth_callback.utf8AndURLEncode];
     
     authenticate_url = [authenticate_url stringByAppendingFormat:@"&display=touch"];
+    
+//    NSLog(@"Authenticate URL: %@", authenticate_url);
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:authenticate_url]];
     [request setValue:[NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)", [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleExecutableKey] ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleIdentifierKey], (__bridge id)CFBundleGetValueForInfoDictionaryKey(CFBundleGetMainBundle(), kCFBundleVersionKey) ?: [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] ? [[UIScreen mainScreen] scale] : 1.0f)] forHTTPHeaderField:@"User-Agent"];
     
@@ -258,10 +267,9 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString)
             completion(nil, oauthParams);
         }
     };
+    
     [self.webView loadRequest:request];
 }
-
-
 
 #pragma mark - Webview delegate
 #pragma mark Turn off spinner
@@ -276,7 +284,8 @@ static inline NSDictionary *CHParametersFromQueryString(NSString *queryString)
 {
     if (_delegateHandler) {
         // For other Oauth 1.0a service providers than LinkedIn, the call back URL might be part of the query of the URL (after the "?"). In this case use index 1 below. In any case NSLog the request URL after the user taps 'Allow'/'Authenticate' after he/she entered his/her username and password and see where in the URL the call back is. Note for some services the callback URL is set once on their website when registering an app, and the OAUTH_CALLBACK set here is ignored.
-
+//        NSLog(@"WebView Request:  %@", request);
+        
         NSString *urlWithoutQueryString = [request.URL.absoluteString componentsSeparatedByString:@"?"][0];
         if ([urlWithoutQueryString rangeOfString:OAUTH_CALLBACK].location != NSNotFound)
         {
