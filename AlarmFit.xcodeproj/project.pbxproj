@@ -10,6 +10,10 @@
 		2F9B72221A95C0E800542332 /* NewAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72211A95C0E800542332 /* NewAlarmViewController.m */; };
 		2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */; };
 		2F9B72281A95CEB500542332 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72271A95CEB500542332 /* Alarm.m */; };
+		2FA92BC71ACFB17F00EBD1AA /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC01ACFB17F00EBD1AA /* BEMCircle.m */; };
+		2FA92BC81ACFB17F00EBD1AA /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC21ACFB17F00EBD1AA /* BEMLine.m */; };
+		2FA92BC91ACFB17F00EBD1AA /* BEMPermanentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC41ACFB17F00EBD1AA /* BEMPermanentPopupView.m */; };
+		2FA92BCA1ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC61ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m */; };
 		5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1378451A95841700CA01BF /* Default-568h@2x.png */; };
 		5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */; };
 		5A81F04D1A9E80510031F2CD /* AlarmNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */; };
@@ -54,6 +58,14 @@
 		2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetAlarmTableViewController.m; sourceTree = "<group>"; };
 		2F9B72261A95CEB500542332 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		2F9B72271A95CEB500542332 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		2FA92BBF1ACFB17F00EBD1AA /* BEMCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCircle.h; sourceTree = "<group>"; };
+		2FA92BC01ACFB17F00EBD1AA /* BEMCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCircle.m; sourceTree = "<group>"; };
+		2FA92BC11ACFB17F00EBD1AA /* BEMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMLine.h; sourceTree = "<group>"; };
+		2FA92BC21ACFB17F00EBD1AA /* BEMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMLine.m; sourceTree = "<group>"; };
+		2FA92BC31ACFB17F00EBD1AA /* BEMPermanentPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPermanentPopupView.h; sourceTree = "<group>"; };
+		2FA92BC41ACFB17F00EBD1AA /* BEMPermanentPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPermanentPopupView.m; sourceTree = "<group>"; };
+		2FA92BC51ACFB17F00EBD1AA /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
+		2FA92BC61ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
 		5A1378451A95841700CA01BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5A81F04B1A9E80510031F2CD /* AlarmNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmNavigationController.h; sourceTree = "<group>"; };
 		5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmNavigationController.m; sourceTree = "<group>"; };
@@ -123,6 +135,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FA92BBE1ACFB17F00EBD1AA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2FA92BBF1ACFB17F00EBD1AA /* BEMCircle.h */,
+				2FA92BC01ACFB17F00EBD1AA /* BEMCircle.m */,
+				2FA92BC11ACFB17F00EBD1AA /* BEMLine.h */,
+				2FA92BC21ACFB17F00EBD1AA /* BEMLine.m */,
+				2FA92BC31ACFB17F00EBD1AA /* BEMPermanentPopupView.h */,
+				2FA92BC41ACFB17F00EBD1AA /* BEMPermanentPopupView.m */,
+				2FA92BC51ACFB17F00EBD1AA /* BEMSimpleLineGraphView.h */,
+				2FA92BC61ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		5A81F0511A9EABFD0031F2CD /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +272,7 @@
 		5AFFA7AE1A8E9BA200B5B429 /* AlarmFit */ = {
 			isa = PBXGroup;
 			children = (
+				2FA92BBE1ACFB17F00EBD1AA /* Classes */,
 				5A81F0511A9EABFD0031F2CD /* UI Elements */,
 				5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */,
 				5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */,
@@ -397,6 +425,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FA92BCA1ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m in Sources */,
+				2FA92BC91ACFB17F00EBD1AA /* BEMPermanentPopupView.m in Sources */,
+				2FA92BC81ACFB17F00EBD1AA /* BEMLine.m in Sources */,
 				2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */,
 				5A85E2461A9568BB0077D491 /* NSString+URLEncoding.m in Sources */,
 				5AFDB4DE1A9F2E33008A4E77 /* PersonalAlarmViewController.m in Sources */,
@@ -415,6 +446,7 @@
 				5A85E2391A95687A0077D491 /* Base64Transcoder.c in Sources */,
 				5AFFA7B21A8E9BA200B5B429 /* main.m in Sources */,
 				5AFDB4D61A9F2507008A4E77 /* StatisticsViewController.m in Sources */,
+				2FA92BC71ACFB17F00EBD1AA /* BEMCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +571,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AlarmFit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -552,7 +584,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = AlarmFit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
