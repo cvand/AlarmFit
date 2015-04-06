@@ -128,15 +128,53 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleep_graph.png" id="Vdm-wU-Ydg">
-                                <rect key="frame" x="23" y="340" width="272" height="147"/>
+                            <view contentMode="scaleToFill" id="0ZO-Dd-G1a" customClass="BEMSimpleLineGraphView">
+                                <rect key="frame" x="17" y="340" width="288" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableBezierCurve" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableYAxisLabel" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="enableXAxisLabel" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorBottom">
+                                        <color key="value" red="0.4296893973203495" green="0.89562352933920752" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorTop">
+                                        <color key="value" red="0.4296893973" green="0.8956235293" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorLine">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="alphaLine">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="widthLine">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorPoint">
+                                        <color key="value" white="0.89502544470000001" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorXaxisLabel">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorYaxisLabel">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sizePoint">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="s8D-OA-Oyn" id="XFO-My-CMT"/>
+                                    <outlet property="delegate" destination="s8D-OA-Oyn" id="cMy-1D-6HD"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Statistics" id="Wrr-iC-EMK"/>
                     <connections>
+                        <outlet property="graphBox" destination="0ZO-Dd-G1a" id="yuP-xf-XaW"/>
                         <outlet property="qualityOfSleep" destination="xhv-Sd-3Jd" id="EFD-cY-Wan"/>
                         <outlet property="sleepCycleLabel" destination="1js-hu-UfG" id="AE5-K1-kNT"/>
                         <outlet property="sleepDurationLabel" destination="PHd-ft-iY6" id="0WR-V9-32z"/>
@@ -282,7 +320,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="SSG-Lm-FcK">
-                                            <rect key="frame" x="255" y="12.5" width="51" height="31"/>
+                                            <rect key="frame" x="255" y="0.0" width="51" height="31"/>
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -912,11 +950,11 @@
         <image name="icon_user" width="68" height="66"/>
         <image name="settings" width="28" height="28"/>
         <image name="sleep" width="28" height="28"/>
-        <image name="sleep_graph.png" width="2252" height="1254"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.19606361680000001" green="1" blue="0.95910558990000006" alpha="1" colorSpace="calibratedRGB"/>
 </document>
