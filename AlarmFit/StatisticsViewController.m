@@ -20,8 +20,7 @@
 @property (nonatomic, strong) OAuth1Controller *oauth1Controller;
 @property (nonatomic, strong) NSString *oauthToken;
 @property (nonatomic, strong) NSString *oauthTokenSecret;
-@property (strong, nonatomic) IBOutlet UITextView *responseText;
-@property (weak, nonatomic) IBOutlet BEMSimpleLineGraphView *graphBox;
+@property (strong, nonatomic) BEMSimpleLineGraphView *graphBox;
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *curveChoice;
 
@@ -33,15 +32,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+//    [self loadGraph];
+}
+
+- (void)loadGraph {
     
+    _graphBox = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 60, 320, 250)];
+    _graphBox.delegate = self;
+    _graphBox.dataSource = self;
+    [self.view addSubview:_graphBox];
     
     [self hydrateDatasets];
-    
-    /* This is commented out because the graph is created in the interface with this sample app. However, the code remains as an example for creating the graph using code. */
-     _graphBox.delegate = self;
-     _graphBox.dataSource = self;
-     [self.view addSubview:_graphBox];
     
     // Customization of the graph
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
@@ -70,6 +71,7 @@
     
     // Setup initial curve selection segment
     self.curveChoice.selectedSegmentIndex = self.graphBox.enableBezierCurve;
+
 }
 
 - (void)hydrateDatasets {
@@ -80,27 +82,31 @@
     [self.arrayOfDates removeAllObjects];
     
     NSDate *baseDate = [NSDate date];
-    BOOL showNullValue = true;
     
+    NSData *data = [self getSleepDataForDate:baseDate];
+
     
-    for (int i = 0; i < 9; i++) {
-        [self.arrayOfValues addObject:@([self getRandomFloat])]; // Random values for the graph
-        if (i == 0) {
-            [self.arrayOfDates addObject:baseDate]; // Dates for the X-Axis of the graph
-        } else if (showNullValue && i == 4) {
-            [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[i-1]]]; // Dates for the X-Axis of the graph
-            self.arrayOfValues[i] = @(BEMNullGraphValue);
-        } else {
-            [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[i-1]]]; // Dates for the X-Axis of the graph
-        }
-        
-        
-        totalNumber = totalNumber + [[self.arrayOfValues objectAtIndex:i] intValue]; // All of the values added together
-    }
+    [self.arrayOfValues addObject:@(1)];
+    [self.arrayOfDates addObject:baseDate];
+    [self.arrayOfValues addObject:@(2)];
+    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[0]]]; // Dates for the X-Axis of the graph
+    [self.arrayOfValues addObject:@(1)];
+    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[1]]]; // Dates for the X-Axis of the graph
+    [self.arrayOfValues addObject:@(0)];
+    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[2]]]; // Dates for the X-Axis of the graph
+    [self.arrayOfValues addObject:@(2)];
+    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[3]]]; // Dates for the X-Axis of the graph
+    [self.arrayOfValues addObject:@(1)];
+    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[4]]]; // Dates for the X-Axis of the graph
+    [self.arrayOfValues addObject:@(0)];
+    [self.arrayOfDates addObject:[self dateForGraphAfterDate:self.arrayOfDates[5]]]; // Dates for the X-Axis of the graph
+    
+    totalNumber = 7;
 }
 
 - (NSDate *)dateForGraphAfterDate:(NSDate *)date {
-    NSTimeInterval secondsInTwelveHours = 12 * 60 * 60;
+    NSTimeInterval secondsInTwelveHours = 60;
+
     NSDate *newDate = [date dateByAddingTimeInterval:secondsInTwelveHours];
     return newDate;
 }
@@ -111,12 +117,7 @@
 - (IBAction)refresh:(id)sender {
     [self hydrateDatasets];
     
-    UIColor *color;
-//    if (self.graphColorChoice.selectedSegmentIndex == 0) color = [UIColor colorWithRed:31.0/255.0 green:187.0/255.0 blue:166.0/255.0 alpha:1.0];
-//    else if (self.graphColorChoice.selectedSegmentIndex == 1) color = [UIColor colorWithRed:255.0/255.0 green:187.0/255.0 blue:31.0/255.0 alpha:1.0];
-//    else if (self.graphColorChoice.selectedSegmentIndex == 2) color = [UIColor colorWithRed:0.0 green:140.0/255.0 blue:255.0/255.0 alpha:1.0];
-    
-    color = [UIColor colorWithRed:0.0 green:140.0/255.0 blue:255.0/255.0 alpha:1.0];
+    UIColor *color = [UIColor colorWithRed:0.0 green:140.0/255.0 blue:255.0/255.0 alpha:1.0];
     self.graphBox.enableBezierCurve = (BOOL) self.curveChoice.selectedSegmentIndex;
     self.graphBox.colorTop = color;
     self.graphBox.colorBottom = color;
@@ -136,46 +137,59 @@
 
 
 -(void)viewDidAppear:(BOOL)animated {
-    //if (_oauthToken == nil || [_oauthToken isEqual:@""]) {
-        //[self login];
-    //}
-    
+    if (_oauthToken == nil || [_oauthToken isEqual:@""]) {
+        [self login];
+    }
+
 }
 
+- (NSData *)getSleepDataForDate:(NSDate *)date
+{
+    __block NSData *returnData;
+    NSString *path = @"1/user/-/sleep/date/2015-02-20.json";
+    
+    NSURLRequest *preparedRequest = [OAuth1Controller preparedRequestForPath:path
+                                                                  parameters:nil
+                                                                  HTTPmethod:@"GET"
+                                                                  oauthToken:self.oauthToken
+                                                                 oauthSecret:self.oauthTokenSecret];
 
-//- (IBAction)testGETRequest:(id)sender
-//{
-//    
-//    NSString *path = @"1/user/-/sleep/date/2015-02-20.json";
-//    
-//    NSURLRequest *preparedRequest = [OAuth1Controller preparedRequestForPath:path
-//                                                                  parameters:nil
-//                                                                  HTTPmethod:@"GET"
-//                                                                  oauthToken:self.oauthToken
-//                                                                 oauthSecret:self.oauthTokenSecret];
-//    
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:preparedRequest
+                                          returningResponse:&response
+                                                      error:&error];
+    
+    if (error == nil) {
+        returnData = data;
+    }
+    
+    
+
 //    [NSURLConnection sendAsynchronousRequest:preparedRequest
 //                                       queue:NSOperationQueue.mainQueue
 //                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 //                               
-//                               dispatch_async(dispatch_get_main_queue(), ^{
+//                               dispatch_sync(dispatch_get_main_queue(), ^{
 //                                   
 //                                   NSLog(@"path35 %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 //                                   
+//                                   returnData = data;
 //                                   [self.responseText setText:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
 //                                   
 //                                   if (error) NSLog(@"Error in API request: %@", error.localizedDescription);
 //                               });
 //                           }];
-//    
-//}
+    return returnData;
+    
+}
 
 - (NSInteger)numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graphBox {
-    return 20; // Number of points in the graph.
+    return (int)[self.arrayOfValues count];
 }
 
 - (CGFloat)lineGraph:(BEMSimpleLineGraphView *)graph valueForPointAtIndex:(NSInteger)index {
-    return 5;
+    return [[self.arrayOfValues objectAtIndex:index] doubleValue];
 }
 
 - (void)login {
@@ -189,7 +203,6 @@
                                  // Store your tokens for authenticating your later requests, consider storing the tokens in the Keychain
                                  self.oauthToken = oauthTokens[@"oauth_token"];
                                  self.oauthTokenSecret = oauthTokens[@"oauth_token_secret"];
-                                 
                              }
                              else
                              {
@@ -197,6 +210,7 @@
                              }
                              [self dismissViewControllerAnimated:YES completion: ^{
                                  self.oauth1Controller = nil;
+                                 [self loadGraph];
                              }];
                          }];
                      }];

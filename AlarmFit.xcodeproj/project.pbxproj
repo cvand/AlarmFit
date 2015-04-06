@@ -135,7 +135,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2FA92BBE1ACFB17F00EBD1AA /* Classes */ = {
+		2FA92BBE1ACFB17F00EBD1AA /* GraphElements */ = {
 			isa = PBXGroup;
 			children = (
 				2FA92BBF1ACFB17F00EBD1AA /* BEMCircle.h */,
@@ -147,6 +147,7 @@
 				2FA92BC51ACFB17F00EBD1AA /* BEMSimpleLineGraphView.h */,
 				2FA92BC61ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m */,
 			);
+			name = GraphElements;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -272,7 +273,7 @@
 		5AFFA7AE1A8E9BA200B5B429 /* AlarmFit */ = {
 			isa = PBXGroup;
 			children = (
-				2FA92BBE1ACFB17F00EBD1AA /* Classes */,
+				2FA92BBE1ACFB17F00EBD1AA /* GraphElements */,
 				5A81F0511A9EABFD0031F2CD /* UI Elements */,
 				5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */,
 				5AFFA7B31A8E9BA200B5B429 /* AppDelegate.h */,
