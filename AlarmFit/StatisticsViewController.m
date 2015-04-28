@@ -197,16 +197,16 @@
 }
 
 - (void)login {
-    
-    NSString *token = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN];
-    NSString *secret = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN_SECRET];
-    
-    if (token != nil && secret != nil) {
-        self.oauthToken = token;
-        self.oauthTokenSecret = secret;
-        [self loadGraph];
-        return;
-    }
+//    
+//    NSString *token = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN];
+//    NSString *secret = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN_SECRET];
+//    
+//    if (token != nil && secret != nil) {
+//        self.oauthToken = token;
+//        self.oauthTokenSecret = secret;
+//        [self loadGraph];
+//        return;
+//    }
     
     LoginWebViewController *loginWebViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginWebViewController"];
     
