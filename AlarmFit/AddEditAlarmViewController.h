@@ -15,5 +15,6 @@
 @property Alarm *alarm;
 @property (nonatomic, assign) NSInteger indexOfAlarmToEdit;
 @property(nonatomic,assign) BOOL editMode;
+@property(nonatomic,assign) BOOL deleteMode;
 
 @end

@@ -72,12 +72,8 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex == 0) {
-        NSMutableArray *alarmList = [NSKeyedUnarchiver unarchiveObjectWithData:[Preferences getUserPreference:SAVED_ALARMS]];
-        [alarmList removeObjectAtIndex: self.indexOfAlarmToEdit];
-        NSData *encodedAlarms = [NSKeyedArchiver archivedDataWithRootObject:alarmList];
-        [Preferences setUserPreference:encodedAlarms forKey:SAVED_ALARMS];
-        
-        [self performSegueWithIdentifier: @"AlarmListSegue" sender: self];
+        self.deleteMode = YES;
+        [self performSegueWithIdentifier: @"SetAlarmSegue" sender: self];
     }
     else{
 
@@ -112,4 +108,17 @@
 }
 - (IBAction)saveButton:(id)sender {
 }
+- (IBAction)deleteButton:(id)sender {
+    if (sender == self.deleteBtn) {
+        NSLog(@"Delete");
+        UIAlertView *deleteAlarmAlert = [[UIAlertView alloc] initWithTitle:@"Delete Alarm"
+                                                                   message:@"Are you sure you want to delete this alarm?"
+                                                                  delegate:self
+                                                         cancelButtonTitle:@"Yes"
+                                                         otherButtonTitles:@"Cancel", nil];
+        [deleteAlarmAlert show];
+        
+    }
+}
+
 @end

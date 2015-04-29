@@ -5,6 +5,5 @@
 
 *.xccheckout
 
-/xcuserdata/
+/xcuserdata/*
 
-*.xcuserstate

@@ -20,6 +20,7 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
 @property UILocalNotification *notification;
 @property NSIndexPath *indexPathForSelectedRow;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addBtn;
 
 @end
 
@@ -74,14 +75,20 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     Alarm *alarm = source.alarm;
     NSInteger indexOfAlarmToEdit = source.indexOfAlarmToEdit;
     BOOL editMode = source.editMode;
+    BOOL delete = source.deleteMode;
     
+    if (delete) {
+        [self.alarms removeObjectAtIndex: indexOfAlarmToEdit];
+        [self saveAlarms:self.alarms];
+        [self.tableView reloadData];
+    }
     if (alarm != nil) {
         alarm.isSet = YES;
         if (editMode) {
             [self.alarms replaceObjectAtIndex:indexOfAlarmToEdit withObject:alarm];
         } else {
             [self.alarms addObject:alarm];
-
+            
         }
         [self saveAlarms:self.alarms];
         [self scheduleAlarm:alarm];
@@ -92,7 +99,6 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
         NSInteger index = [_alarms indexOfObject:alarm];
         NSIndexPath *path = [NSIndexPath indexPathForItem:index inSection:0];
         [self setSwitch:YES forElementAtIndex:path inTableView:self.tableView];
-
     }
 }
 - (void)viewDidLoad {
@@ -138,7 +144,9 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
 
 - (void)toggleAlarm:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView {
     Alarm *alarm = [self.alarms objectAtIndex:indexPath.row];
-    [self unsetAlarms];
+    if ( !alarm.isSet ) {
+        [self unsetAlarms];
+    }
     alarm.isSet = !alarm.isSet;
     [self setSwitch:alarm.isSet forElementAtIndex:indexPath inTableView:tableView];
 }
@@ -179,8 +187,12 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     if([segue.identifier isEqualToString:@"SetAlarmToEditAlarm"])
     {
         AddEditAlarmViewController *controller = (AddEditAlarmViewController *)segue.destinationViewController;
-        controller.indexOfAlarmToEdit = self.indexPathForSelectedRow.row;
-        controller.editMode = YES;
+        if (sender == self.addBtn) {
+            controller.editMode = NO;
+        } else {
+            controller.editMode = YES;
+            controller.indexOfAlarmToEdit = self.indexPathForSelectedRow.row;
+        }
     }
 }
 
