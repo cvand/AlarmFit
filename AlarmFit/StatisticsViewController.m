@@ -11,6 +11,7 @@
 #import "OAuth1Controller.h"
 #import "LoginWebViewController.h"
 #import "Preferences.h"
+#import "FitbitService.h"
 
 @interface StatisticsViewController (){
     int previousStepperValue;
@@ -25,16 +26,18 @@
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *curveChoice;
 @property (strong, nonatomic) IBOutlet UIView *parentView;
+@property (weak, nonatomic) IBOutlet UILabel *qualityLbl;
+@property (weak, nonatomic) IBOutlet UILabel *durationLbl;
+@property (weak, nonatomic) IBOutlet UILabel *cycleLbl;
+@property (weak, nonatomic) IBOutlet UILabel *dateLbl;
 
 
 @end
 
 @implementation StatisticsViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self loadGraph];
 }
 
 - (void)loadGraph {
@@ -44,8 +47,6 @@
     _graphBox.delegate = self;
     _graphBox.dataSource = self;
     [self.view addSubview:_graphBox];
-    
-    [self hydrateDatasets];
     
     // Customization of the graph
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
@@ -77,27 +78,12 @@
 
 }
 
-- (void)hydrateDatasets {
+- (void)hydrateDatasets:(NSArray *)sleep {
     
     if(!self.arrayOfValues) self.arrayOfValues = [[NSMutableArray alloc] init];
     if(!self.arrayOfDates) self.arrayOfDates = [[NSMutableArray alloc] init];
     [self.arrayOfValues removeAllObjects];
     [self.arrayOfDates removeAllObjects];
-    
-    NSDate *baseDate = [NSDate date];
-    
-    NSData *data = [self getSleepDataForDate:baseDate];
-    
-    NSLog(@"%@", data);
-    
-    NSError* error;
-    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
-                                                         options:kNilOptions
-                                                           error:&error];
-    
-    NSArray* sleepData = [json objectForKey:@"sleep"];
-    NSDictionary *sleepD = sleepData[0];
-    NSArray *sleep = [sleepD objectForKey:@"minuteData"];
     
     for (NSDictionary* minute in sleep) {
         NSString *time = [minute objectForKey:@"dateTime"];
@@ -121,7 +107,7 @@
 #pragma mark - Graph Actions
 
 - (IBAction)refresh:(id)sender {
-    [self hydrateDatasets];
+    [self loadDataIntoView];
     
     UIColor *color = [UIColor colorWithRed:0.0 green:140.0/255.0 blue:255.0/255.0 alpha:1.0];
     self.graphBox.enableBezierCurve = (BOOL) self.curveChoice.selectedSegmentIndex;
@@ -136,41 +122,11 @@
     [self.graphBox reloadGraph];
 }
 
-- (float)getRandomFloat {
-    float i1 = (float)(arc4random() % 1000000) / 100 ;
-    return i1;
-}
-
-
 -(void)viewDidAppear:(BOOL)animated {
     if (_oauthToken == nil || [_oauthToken isEqual:@""]) {
         [self login];
     }
 
-}
-
-- (NSData *)getSleepDataForDate:(NSDate *)date
-{
-    __block NSData *returnData;
-    NSString *path = @"1/user/-/sleep/date/2015-02-20.json";
-    
-    NSURLRequest *preparedRequest = [OAuth1Controller preparedRequestForPath:path
-                                                                  parameters:nil
-                                                                  HTTPmethod:@"GET"
-                                                                  oauthToken:self.oauthToken
-                                                                 oauthSecret:self.oauthTokenSecret];
-
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:preparedRequest
-                                          returningResponse:&response
-                                                      error:&error];
-    
-    if (error == nil) {
-        returnData = data;
-    }
-    return returnData;
-    
 }
 
 - (NSInteger)numberOfPointsInLineGraph:(BEMSimpleLineGraphView *)graphBox {
@@ -181,6 +137,37 @@
     return [[self.arrayOfValues objectAtIndex:index] doubleValue];
 }
 
+- (void) loadDataIntoView {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *baseDate = [formatter dateFromString:@"2015-04-28"];
+    
+    NSData *data = [FitbitService getSleepData:baseDate withToken:self.oauthToken andSecret:self.oauthTokenSecret];
+    
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:kNilOptions
+                                                           error:&error];
+    
+    NSArray* sleepData = [json objectForKey:@"sleep"];
+    NSDictionary *sleepD = sleepData[0];
+    NSNumber *efficiency = [sleepD objectForKey:@"efficiency"];
+    NSNumber *duration = [sleepD objectForKey:@"duration"];
+    NSArray *sleep = [sleepD objectForKey:@"minuteData"];
+    
+    [formatter setDateFormat:@"EEEE, MMMM dd, yyyy"];
+    NSString *dateString = [formatter stringFromDate:baseDate];
+    self.dateLbl.text = dateString;
+    self.qualityLbl.text = [NSString stringWithFormat:@"%@ %%", efficiency];
+    
+    NSDate *dureationDate = [NSDate dateWithTimeIntervalSince1970:[duration doubleValue]];
+    [formatter setDateFormat:@"HH'h 'mm'm'"];
+    self.durationLbl.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:dureationDate]];
+    
+    [self hydrateDatasets:sleep];
+    [self loadGraph];
+}
+
 - (void)login {
     
     NSString *token = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN];
@@ -189,7 +176,7 @@
     if (token != nil && secret != nil) {
         self.oauthToken = token;
         self.oauthTokenSecret = secret;
-        [self loadGraph];
+        [self loadDataIntoView];
         return;
     }
     
@@ -214,7 +201,7 @@
                              }
                              [self dismissViewControllerAnimated:YES completion: ^{
                                  self.oauth1Controller = nil;
-                                 [self loadGraph];
+                                 [self loadDataIntoView];
                              }];
                          }];
                      }];

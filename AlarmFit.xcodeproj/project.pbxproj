@@ -14,6 +14,8 @@
 		2FA92BC81ACFB17F00EBD1AA /* BEMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC21ACFB17F00EBD1AA /* BEMLine.m */; };
 		2FA92BC91ACFB17F00EBD1AA /* BEMPermanentPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC41ACFB17F00EBD1AA /* BEMPermanentPopupView.m */; };
 		2FA92BCA1ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC61ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m */; };
+		5A07EF551AF0BD8000D2DFE8 /* FitbitService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A07EF541AF0BD8000D2DFE8 /* FitbitService.m */; };
+		5A07EF581AF0CB6C00D2DFE8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A07EF571AF0CB6C00D2DFE8 /* ProfileViewController.m */; };
 		5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1378451A95841700CA01BF /* Default-568h@2x.png */; };
 		5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */; };
 		5A81F04D1A9E80510031F2CD /* AlarmNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */; };
@@ -67,6 +69,10 @@
 		2FA92BC41ACFB17F00EBD1AA /* BEMPermanentPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPermanentPopupView.m; sourceTree = "<group>"; };
 		2FA92BC51ACFB17F00EBD1AA /* BEMSimpleLineGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMSimpleLineGraphView.h; sourceTree = "<group>"; };
 		2FA92BC61ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMSimpleLineGraphView.m; sourceTree = "<group>"; };
+		5A07EF531AF0BD8000D2DFE8 /* FitbitService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FitbitService.h; sourceTree = "<group>"; };
+		5A07EF541AF0BD8000D2DFE8 /* FitbitService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FitbitService.m; sourceTree = "<group>"; };
+		5A07EF561AF0CB6C00D2DFE8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		5A07EF571AF0CB6C00D2DFE8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		5A1378451A95841700CA01BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5A81F04B1A9E80510031F2CD /* AlarmNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmNavigationController.h; sourceTree = "<group>"; };
 		5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmNavigationController.m; sourceTree = "<group>"; };
@@ -92,8 +98,6 @@
 		5A85E24F1A9574760077D491 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		5AA801621AD2485B00884190 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
 		5AA801631AD2485B00884190 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
-		5ABC176D1A9F1AC300F0EF3B /* battery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = battery.png; path = "../../../../../../cmu/Courses/08766 - MPCS/AlarmFit/AlarmFit/AlarmFit/battery.png"; sourceTree = "<group>"; };
-		5AF99D581A9F172400C8C47F /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = "../../../../../../cmu/Courses/08766 - MPCS/AlarmFit/AlarmFit/AlarmFit/avatar.png"; sourceTree = "<group>"; };
 		5AFDB4D41A9F2507008A4E77 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
 		5AFDB4D51A9F2507008A4E77 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
 		5AFDB4D71A9F2984008A4E77 /* sleep_graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sleep_graph.png; path = "../../../../../../cmu/Courses/08766 - MPCS/AlarmFit/AlarmFit/AlarmFit/sleep_graph.png"; sourceTree = "<group>"; };
@@ -152,6 +156,15 @@
 			);
 			name = GraphElements;
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		5A07EF521AF0BD6000D2DFE8 /* Fitbit */ = {
+			isa = PBXGroup;
+			children = (
+				5A07EF531AF0BD8000D2DFE8 /* FitbitService.h */,
+				5A07EF541AF0BD8000D2DFE8 /* FitbitService.m */,
+			);
+			name = Fitbit;
 			sourceTree = "<group>";
 		};
 		5A81F0511A9EABFD0031F2CD /* UI Elements */ = {
@@ -230,6 +243,8 @@
 				5AFDB4DA1A9F2E15008A4E77 /* SettingsViewController.m */,
 				5AFDB4DC1A9F2E33008A4E77 /* PersonalAlarmViewController.h */,
 				5AFDB4DD1A9F2E33008A4E77 /* PersonalAlarmViewController.m */,
+				5A07EF561AF0CB6C00D2DFE8 /* ProfileViewController.h */,
+				5A07EF571AF0CB6C00D2DFE8 /* ProfileViewController.m */,
 			);
 			name = TabControllers;
 			sourceTree = "<group>";
@@ -247,8 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				5AFDB4D71A9F2984008A4E77 /* sleep_graph.png */,
-				5ABC176D1A9F1AC300F0EF3B /* battery.png */,
-				5AF99D581A9F172400C8C47F /* avatar.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -278,6 +291,7 @@
 		5AFFA7AE1A8E9BA200B5B429 /* AlarmFit */ = {
 			isa = PBXGroup;
 			children = (
+				5A07EF521AF0BD6000D2DFE8 /* Fitbit */,
 				2FA92BBE1ACFB17F00EBD1AA /* GraphElements */,
 				5A81F0511A9EABFD0031F2CD /* UI Elements */,
 				5A85E2441A9568BB0077D491 /* AlarmFit.entitlements */,
@@ -435,6 +449,7 @@
 				2FA92BC91ACFB17F00EBD1AA /* BEMPermanentPopupView.m in Sources */,
 				2FA92BC81ACFB17F00EBD1AA /* BEMLine.m in Sources */,
 				2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */,
+				5A07EF581AF0CB6C00D2DFE8 /* ProfileViewController.m in Sources */,
 				5A85E2461A9568BB0077D491 /* NSString+URLEncoding.m in Sources */,
 				5AFDB4DE1A9F2E33008A4E77 /* PersonalAlarmViewController.m in Sources */,
 				5A85E23A1A95687A0077D491 /* hmac.c in Sources */,
@@ -444,6 +459,7 @@
 				5AFFA7BB1A8E9BA200B5B429 /* SecondViewController.m in Sources */,
 				5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */,
 				5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */,
+				5A07EF551AF0BD8000D2DFE8 /* FitbitService.m in Sources */,
 				2F9B72221A95C0E800542332 /* AddEditAlarmViewController.m in Sources */,
 				5AFDB4DB1A9F2E15008A4E77 /* SettingsViewController.m in Sources */,
 				5A85E23B1A95687A0077D491 /* sha1.c in Sources */,
