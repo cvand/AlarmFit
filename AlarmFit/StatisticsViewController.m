@@ -24,6 +24,7 @@
 @property (strong, nonatomic) BEMSimpleLineGraphView *graphBox;
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *curveChoice;
+@property (strong, nonatomic) IBOutlet UIView *parentView;
 
 
 @end
@@ -38,7 +39,8 @@
 
 - (void)loadGraph {
     
-    _graphBox = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, 60, 320, 250)];
+    float y = self.parentView.frame.size.height;
+    _graphBox = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, y-230, 320, 180)];
     _graphBox.delegate = self;
     _graphBox.dataSource = self;
     [self.view addSubview:_graphBox];
@@ -167,23 +169,6 @@
     if (error == nil) {
         returnData = data;
     }
-    
-    
-
-//    [NSURLConnection sendAsynchronousRequest:preparedRequest
-//                                       queue:NSOperationQueue.mainQueue
-//                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-//                               
-//                               dispatch_sync(dispatch_get_main_queue(), ^{
-//                                   
-//                                   NSLog(@"path35 %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-//                                   
-//                                   returnData = data;
-//                                   [self.responseText setText:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
-//                                   
-//                                   if (error) NSLog(@"Error in API request: %@", error.localizedDescription);
-//                               });
-//                           }];
     return returnData;
     
 }
@@ -197,16 +182,16 @@
 }
 
 - (void)login {
-//    
-//    NSString *token = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN];
-//    NSString *secret = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN_SECRET];
-//    
-//    if (token != nil && secret != nil) {
-//        self.oauthToken = token;
-//        self.oauthTokenSecret = secret;
-//        [self loadGraph];
-//        return;
-//    }
+    
+    NSString *token = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN];
+    NSString *secret = [Preferences getUserPreference:FITBIT_OAUTH_TOKEN_SECRET];
+    
+    if (token != nil && secret != nil) {
+        self.oauthToken = token;
+        self.oauthTokenSecret = secret;
+        [self loadGraph];
+        return;
+    }
     
     LoginWebViewController *loginWebViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"loginWebViewController"];
     
