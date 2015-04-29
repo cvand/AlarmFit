@@ -91,9 +91,8 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
             
         }
         [self saveAlarms:self.alarms];
-        [self scheduleAlarm:alarm];
-        
         [self unsetAlarms];
+        [self scheduleAlarm:alarm];
         [self.tableView reloadData];
         
         NSInteger index = [_alarms indexOfObject:alarm];

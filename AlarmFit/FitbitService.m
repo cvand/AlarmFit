@@ -18,7 +18,7 @@
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     NSString * dateString = [dateFormatter stringFromDate:date];
     
-    NSString *path = [NSString stringWithFormat:@"1/user/-/sleep/date/%@", dateString];
+    NSString *path = [NSString stringWithFormat:@"1/user/-/sleep/date/%@.json", dateString];
     
     NSURLRequest *preparedRequest = [OAuth1Controller preparedRequestForPath:path
                                                                   parameters:nil

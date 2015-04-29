@@ -40,7 +40,7 @@
     [super viewDidLoad];
 }
 
-- (void)loadGraph {
+- (void)loadGraph:(NSArray *)sleep {
     
     float y = self.parentView.frame.size.height;
     _graphBox = [[BEMSimpleLineGraphView alloc] initWithFrame:CGRectMake(0, y-230, 320, 180)];
@@ -48,6 +48,7 @@
     _graphBox.dataSource = self;
     [self.view addSubview:_graphBox];
     
+    [self hydrateDatasets:sleep];
     // Customization of the graph
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
     size_t num_locations = 2;
@@ -88,7 +89,6 @@
     for (NSDictionary* minute in sleep) {
         NSString *time = [minute objectForKey:@"dateTime"];
         NSString *value = [minute objectForKey:@"value"];
-        NSLog(@"minute: %@", value);
         [self.arrayOfValues addObject:value];
         [self.arrayOfDates addObject:time];
     }
@@ -140,7 +140,7 @@
 - (void) loadDataIntoView {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSDate *baseDate = [formatter dateFromString:@"2015-04-28"];
+    NSDate *baseDate = [formatter dateFromString:@"2015-04-27"];
     
     NSData *data = [FitbitService getSleepData:baseDate withToken:self.oauthToken andSecret:self.oauthTokenSecret];
     
@@ -164,8 +164,7 @@
     [formatter setDateFormat:@"HH'h 'mm'm'"];
     self.durationLbl.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:dureationDate]];
     
-    [self hydrateDatasets:sleep];
-    [self loadGraph];
+    [self loadGraph:sleep];
 }
 
 - (void)login {

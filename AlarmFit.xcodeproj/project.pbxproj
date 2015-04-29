@@ -16,6 +16,7 @@
 		2FA92BCA1ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC61ACFB17F00EBD1AA /* BEMSimpleLineGraphView.m */; };
 		5A07EF551AF0BD8000D2DFE8 /* FitbitService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A07EF541AF0BD8000D2DFE8 /* FitbitService.m */; };
 		5A07EF581AF0CB6C00D2DFE8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A07EF571AF0CB6C00D2DFE8 /* ProfileViewController.m */; };
+		5A07EF5F1AF0E0A600D2DFE8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A07EF5E1AF0E0A600D2DFE8 /* AudioToolbox.framework */; };
 		5A1378461A95871E00CA01BF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1378451A95841700CA01BF /* Default-568h@2x.png */; };
 		5A5D96811A9E6DE900E03779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFA7BF1A8E9BA200B5B429 /* Images.xcassets */; };
 		5A81F04D1A9E80510031F2CD /* AlarmNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */; };
@@ -73,6 +74,7 @@
 		5A07EF541AF0BD8000D2DFE8 /* FitbitService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FitbitService.m; sourceTree = "<group>"; };
 		5A07EF561AF0CB6C00D2DFE8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		5A07EF571AF0CB6C00D2DFE8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5A07EF5E1AF0E0A600D2DFE8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5A1378451A95841700CA01BF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5A81F04B1A9E80510031F2CD /* AlarmNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmNavigationController.h; sourceTree = "<group>"; };
 		5A81F04C1A9E80510031F2CD /* AlarmNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmNavigationController.m; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				5A85E2501A9574760077D491 /* CoreGraphics.framework in Frameworks */,
 				5A85E24E1A95746E0077D491 /* Foundation.framework in Frameworks */,
 				5A85E24C1A9574630077D491 /* UIKit.framework in Frameworks */,
+				5A07EF5F1AF0E0A600D2DFE8 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +272,7 @@
 		5AFFA7A31A8E9BA200B5B429 = {
 			isa = PBXGroup;
 			children = (
+				5A07EF5E1AF0E0A600D2DFE8 /* AudioToolbox.framework */,
 				5A1378451A95841700CA01BF /* Default-568h@2x.png */,
 				5A85E24F1A9574760077D491 /* CoreGraphics.framework */,
 				5A85E24D1A95746E0077D491 /* Foundation.framework */,
@@ -391,6 +395,11 @@
 					5AFFA7AB1A8E9BA200B5B429 = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = L2K4US24GC;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+						};
 					};
 					5AFFA7C71A8E9BA200B5B429 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -592,11 +601,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = AlarmFit/AlarmFit.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AlarmFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -605,11 +617,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = AlarmFit/AlarmFit.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AlarmFit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
