@@ -22,4 +22,5 @@
     [defaults setObject:value forKey:key];
     [defaults synchronize];
 }
+
 @end

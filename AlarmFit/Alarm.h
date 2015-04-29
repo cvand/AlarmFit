@@ -10,8 +10,9 @@
 
 @interface Alarm : NSObject
 
-@property NSString *alarmTime;
-@property BOOL set;
+@property(nonatomic,strong) NSString *alarmTime;
+@property (nonatomic, assign) BOOL isSet;
 
+-(NSDate *)getAlarmTimeAsDateObject;
 @end
 

@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#define FITBIT_OAUTH_TOKEN           @"fitbitToken"
-#define FITBIT_OAUTH_TOKEN_SECRET         @"fitbitToeknSecret"
+#define FITBIT_OAUTH_TOKEN           @"alarmFit_FitbitToken"
+#define FITBIT_OAUTH_TOKEN_SECRET         @"alarmFit_FitbitTokenSecret"
+#define SAVED_ALARMS         @"alarmFit_SavedAlarms"
+
 
 @interface Preferences : NSObject
 

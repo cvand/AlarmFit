@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F9B72221A95C0E800542332 /* NewAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72211A95C0E800542332 /* NewAlarmViewController.m */; };
+		2F9B72221A95C0E800542332 /* AddEditAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72211A95C0E800542332 /* AddEditAlarmViewController.m */; };
 		2F9B72251A95C29600542332 /* SetAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */; };
 		2F9B72281A95CEB500542332 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B72271A95CEB500542332 /* Alarm.m */; };
 		2FA92BC71ACFB17F00EBD1AA /* BEMCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA92BC01ACFB17F00EBD1AA /* BEMCircle.m */; };
@@ -53,8 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F9B72201A95C0E800542332 /* NewAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlarmViewController.h; sourceTree = "<group>"; };
-		2F9B72211A95C0E800542332 /* NewAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlarmViewController.m; sourceTree = "<group>"; };
+		2F9B72201A95C0E800542332 /* AddEditAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddEditAlarmViewController.h; sourceTree = "<group>"; };
+		2F9B72211A95C0E800542332 /* AddEditAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddEditAlarmViewController.m; sourceTree = "<group>"; };
 		2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetAlarmTableViewController.h; sourceTree = "<group>"; };
 		2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetAlarmTableViewController.m; sourceTree = "<group>"; };
 		2F9B72261A95CEB500542332 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
@@ -168,8 +168,8 @@
 			children = (
 				2F9B72231A95C29600542332 /* SetAlarmTableViewController.h */,
 				2F9B72241A95C29600542332 /* SetAlarmTableViewController.m */,
-				2F9B72201A95C0E800542332 /* NewAlarmViewController.h */,
-				2F9B72211A95C0E800542332 /* NewAlarmViewController.m */,
+				2F9B72201A95C0E800542332 /* AddEditAlarmViewController.h */,
+				2F9B72211A95C0E800542332 /* AddEditAlarmViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -444,7 +444,7 @@
 				5AFFA7BB1A8E9BA200B5B429 /* SecondViewController.m in Sources */,
 				5AFFA7B51A8E9BA200B5B429 /* AppDelegate.m in Sources */,
 				5AFFA7B81A8E9BA200B5B429 /* FirstViewController.m in Sources */,
-				2F9B72221A95C0E800542332 /* NewAlarmViewController.m in Sources */,
+				2F9B72221A95C0E800542332 /* AddEditAlarmViewController.m in Sources */,
 				5AFDB4DB1A9F2E15008A4E77 /* SettingsViewController.m in Sources */,
 				5A85E23B1A95687A0077D491 /* sha1.c in Sources */,
 				5A81F05A1A9EAF4E0031F2CD /* SwitchTableViewCell.m in Sources */,

@@ -8,14 +8,17 @@
 
 #import "SetAlarmTableViewController.h"
 #import "Alarm.h"
-#import "NewAlarmViewController.h"
+#import "AddEditAlarmViewController.h"
 #import "SwitchTableViewCell.h"
+#import "Preferences.h"
 
 static NSString *CellIdentifier = @"ListPrototypeCell";
 
 
 @interface SetAlarmTableViewController ()
 @property NSMutableArray *alarms;
+@property UILocalNotification *notification;
+@property NSIndexPath *indexPathForSelectedRow;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -24,88 +27,89 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
 @implementation SetAlarmTableViewController
 
 - (void)loadInitialData {
-    Alarm *alarm1 = [[Alarm alloc] init];
-    alarm1.alarmTime=@"08:15";
-    alarm1.set = NO;
-    [self.alarms addObject:alarm1];
-    Alarm *alarm2 = [[Alarm alloc] init];
-    alarm2.alarmTime=@"08:45";
-    alarm2.set = YES;
-    [self.alarms addObject:alarm2];
-    Alarm *alarm3 = [[Alarm alloc] init];
-    alarm3.alarmTime=@"10:15";
-    alarm3.set = NO;
-    [self.alarms addObject:alarm3];
-    Alarm *alarm4 = [[Alarm alloc] init];
-    alarm4.alarmTime=@"11:15";
-    alarm4.set = NO;
-    [self.alarms addObject:alarm4];
-    Alarm *alarm5 = [[Alarm alloc] init];
-    alarm5.alarmTime=@"12:15";
-    alarm5.set = NO;
-    [self.alarms addObject:alarm5];
+    
+    self.alarms = [NSMutableArray arrayWithArray:[self getSavedAlarms]];
+    
+    if (self.alarms == nil) {
+        self.alarms = [[NSMutableArray alloc] init];
+        NSLog(@"No alarms saved");
+    }
 }
 
-- (IBAction) scheduleAlarm:(id) sender {
-    NSDate *currentDate = [NSDate date];
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    comps.day = 02;
-    comps.month = 04;
-    comps.year = 2015;
-    comps.hour = 01;
-    comps.minute = 29;
-    //NSDate * nextAlertTime = [[NSCalendar currentCalendar] dateFromComponents:comps];
+- (NSArray *)getSavedAlarms {
+    return [NSKeyedUnarchiver unarchiveObjectWithData:[Preferences getUserPreference:SAVED_ALARMS]];
+}
+
+- (void) saveAlarms:(NSArray *)array {
+    NSData *encodedAlarms = [NSKeyedArchiver archivedDataWithRootObject:array];
+    [Preferences setUserPreference:encodedAlarms forKey:SAVED_ALARMS];
+}
+
+- (void) scheduleAlarm:(Alarm *) alarm {
     
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    //notification.fireDate = nextAlertTime;
+    if (self.notification != nil) {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
+    self.notification = [[UILocalNotification alloc] init];
     
-    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:7];
-    notification.timeZone = [NSTimeZone systemTimeZone];
-    notification.alertAction = @"Show";
-    notification.alertBody = @"Wake up now!";
-    notification.soundName = UILocalNotificationDefaultSoundName;
-    //notification.applicationIconBadgeNumber = 1;
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    NSDate *date = [alarm getAlarmTimeAsDateObject];
+    
+    self.notification.repeatInterval = NSDayCalendarUnit;
+    [self.notification setFireDate:date];
+    [self.notification setTimeZone:[NSTimeZone defaultTimeZone]];
+    [self.notification setAlertAction:@"Show"];
+    [self.notification setAlertBody:@"Waky waky!"];
+    [self.notification setHasAction:YES];
+    [self.notification setSoundName:UILocalNotificationDefaultSoundName];
+    
+    NSNumber* uidToStore = [NSNumber numberWithInt:0];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:uidToStore forKey:@"notificationID"];
+    self.notification.userInfo = userInfo;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:self.notification];
 }
 
 - (IBAction)unwindToAlarms:(UIStoryboardSegue *)segue {
-    NewAlarmViewController *source = [segue sourceViewController];
+    AddEditAlarmViewController *source = [segue sourceViewController];
     Alarm *alarm = source.alarm;
+    NSInteger indexOfAlarmToEdit = source.indexOfAlarmToEdit;
+    BOOL editMode = source.editMode;
     
     if (alarm != nil) {
-        alarm.set = YES;
-        [self.alarms addObject:alarm];
-        [self unsetAlarms];
+        alarm.isSet = YES;
+        if (editMode) {
+            [self.alarms replaceObjectAtIndex:indexOfAlarmToEdit withObject:alarm];
+        } else {
+            [self.alarms addObject:alarm];
+
+        }
+        [self saveAlarms:self.alarms];
+        [self scheduleAlarm:alarm];
         
+        [self unsetAlarms];
         [self.tableView reloadData];
         
         NSInteger index = [_alarms indexOfObject:alarm];
         NSIndexPath *path = [NSIndexPath indexPathForItem:index inSection:0];
         [self setSwitch:YES forElementAtIndex:path inTableView:self.tableView];
+
     }
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.alarms = [[NSMutableArray alloc] init];
     [self loadInitialData];
-    
-//    self.tableView.backgroundColor = [UIColor colorWithRed:88 green:114 blue:161 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return [self.alarms count];
 }
 
@@ -115,12 +119,17 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     
     Alarm *alarm = [self.alarms objectAtIndex:indexPath.row];
     cell.label.text = alarm.alarmTime;
-    [cell.toggleSwitch setOn:alarm.set animated:YES];
+    [cell.toggleSwitch setOn:alarm.isSet animated:YES];
     
     [cell.toggleSwitch addTarget:self action:@selector(stateChanged:) forControlEvents:UIControlEventValueChanged];
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.indexPathForSelectedRow = indexPath;
+    [self performSegueWithIdentifier:@"SetAlarmToEditAlarm" sender:self];
+    
+}
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
@@ -129,23 +138,23 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
 
 - (void)toggleAlarm:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView {
     Alarm *alarm = [self.alarms objectAtIndex:indexPath.row];
-    
-    //clear toggles first
     [self unsetAlarms];
-    
-    alarm.set = !alarm.set;
-    if (alarm.set) {
-        [self setSwitch:alarm.set forElementAtIndex:indexPath inTableView:tableView];
-    }
+    alarm.isSet = !alarm.isSet;
+    [self setSwitch:alarm.isSet forElementAtIndex:indexPath inTableView:tableView];
 }
 
 - (void)unsetAlarms {
     for (Alarm *al in _alarms) {
-        if (al.set) {
-            al.set = NO;
+        if (al.isSet) {
+            al.isSet = NO;
             NSInteger index = [_alarms indexOfObject:al];
             NSIndexPath *path = [NSIndexPath indexPathForItem:index inSection:0];
             [self setSwitch:NO forElementAtIndex:path inTableView:self.tableView];
+            
+            if (self.notification != nil) {
+                [[UIApplication sharedApplication] cancelAllLocalNotifications];
+                self.notification = nil;
+            }
         }
     }
 }
@@ -163,6 +172,16 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
         return;
     [self toggleAlarm:indexPath inTableView:self.tableView];
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"SetAlarmToEditAlarm"])
+    {
+        AddEditAlarmViewController *controller = (AddEditAlarmViewController *)segue.destinationViewController;
+        controller.indexOfAlarmToEdit = self.indexPathForSelectedRow.row;
+        controller.editMode = YES;
+    }
 }
 
 
@@ -196,7 +215,6 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     return NO;
 }
 
-
 /*
 #pragma mark - Navigation
 
@@ -206,13 +224,6 @@ static NSString *CellIdentifier = @"ListPrototypeCell";
     // Pass the selected object to the new view controller.
 }
 */
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    
-    UIAlertView *notificationAlert = [[UIAlertView alloc] initWithTitle:@"Notification"    message:@"This local notification"
-                                                               delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    
-    [notificationAlert show];
-    NSLog(@"didReceiveLocalNotification");
-}
+
 
 @end
